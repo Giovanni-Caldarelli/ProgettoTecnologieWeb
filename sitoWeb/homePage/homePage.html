@@ -1,21 +1,119 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-
-    <title>FastPark</title>
     <meta charset="UTF-8">
-    <meta name="generator" content="Visual Studio Code">
-    <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città">
-    <meta name="description" content="FastPark - Parcheggio per auto prenotabile online">
-    <meta name="author" content="Giovanni Caldarelli, Raffaele Esposito, Federico Cervo">
-    
-
-    <link href="homepage/styleHomePage.css" rel="stylesheet" type="text/css"/>
-    <link rel="icon" href="../immagini/logoP.png" type="image/png" />
-    
-
+    <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
+    <title>FastPark - Homepage</title>
+    <link rel="stylesheet" href="styleHomePage.css">
+    <link rel="icon" href="../immagini/logoP.png" type="image/png">
 </head>
+
 <body>
+    <header>
+        <div class="logo">
+            <img src="../immagini/logo.png" alt="FastPark Logo">
+            <h1>FastPark</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#prenotazione">Prenota</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    
+    <main>
+        <section id="intro">
+            <h2>Trova il tuo parcheggio in pochi secondi</h2>
+            <p>Prenota un posto auto online in modo facile, sicuro e veloce.</p>
+            <a href="#prenotazione" class="btn">Prenota Ora</a>
+        </section>
+        
+        <section id="disponibilita">
+            <h2>Parcheggi Disponibili</h2>
+            <p>Aggiornamenti in tempo reale sui posti auto disponibili.</p>
+            <div id="posti-liberi" class="parcheggi-container"></div>
+        </section>             
+    </main>
+    
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-item">
+                <img src="../immagini/telecamera.png" alt="Sicurezza" >
+                <h3>Sicurezza</h3>
+                <p>
+                    Sicurezza garantita 24 ore su 24, 7 giorni su 7. Tecnologia avanzata con monitoraggio FullHD continuo.
+                </p>
+            </div>
+            <div class="footer-item">
+                <img src="../immagini/punto.png" alt="Dove siamo">
+                <h3>Dove siamo</h3>
+                <p>
+                    Presenti in 3 zone strategiche di Napoli in centro storico, Mergellina e Vomero. Oltre 25 anni di esperienza e affidabilità.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-contacts" id="contatti">
+            <div class="contact">
+                <p><strong>Centro Storico</strong></p>
+                <p>Email: <a href="mailto:g.caldarelli16@studenti.unisa.it">g.caldarelli16@studenti.unisa.it</a></p>
+                <p>Telefono: +39 3385782927</p>
+                <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Toledo,+123,+80134+Napoli" target="_blank">Via Toledo, 123, 80134 Napoli</a></p>
+            </div>
+            <div class="contact">
+                <p><strong>Mergellina</strong></p>
+                <p>Email: <a href="mailto:r.esposito163@studenti.unisa.it">r.esposito163@studenti.unisa.it</a></p>
+                <p>Telefono: +39 3339197364</p>
+                <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Caracciolo,+45,+80122+Napoli" target="_blank">Via Caracciolo, 45, 80122 Napoli</a></p>
+            </div>
+            <div class="contact">
+                <p><strong>Vomero</strong></p>
+                <p>Email: <a href="mailto:f.cervo@studenti.unisa.it">f.cervo@studenti.unisa.it</a></p>
+                <p>Telefono: +39 3914783091</p>
+                <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Scarlatti,+67,+80127+Napoli" target="_blank">Via Scarlatti, 67, 80127 Napoli</a></p>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+    <script>
+        const parcheggi = [
+            { zona: "Centro Storico", indirizzo:  "Via Toledo, 123, 80134 Napoli", posti: 12 },
+            { zona: "Mergellina", indirizzo: "Via Caracciolo, 45, 80122 Napoli", posti: 8 },
+            { zona: "Vomero", indirizzo: "Via Scarlatti, 67, 80127 Napoli", posti: 5 }
+        ];
+    
+        function mostraDisponibilita() {
+            const container = document.getElementById("posti-liberi");
+            container.innerHTML = ""; // Pulizia del contenitore
+    
+            parcheggi.forEach(parcheggio => {
+                container.innerHTML += `
+                    <div class="parcheggio">
+                        <h3>${parcheggio.zona}</h3>
+                        <p>Indirizzo: <a href="https://www.google.com/maps?q=${encodeURIComponent(parcheggio.indirizzo)}" target="_blank">${parcheggio.indirizzo}</a></p>
+                        <p><strong>Posti disponibili:</strong> ${parcheggio.posti}</p>
+                    </div>
+                `;
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", mostraDisponibilita);
+    </script>
+    
+    
     
 </body>
 </html>
+

@@ -1,0 +1,175 @@
+/* Stili generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sezione principale */
+#intro {
+    text-align: center;
+    padding: 50px;
+    background-color: #007BFF;
+    color: white;
+}
+
+#intro h2 {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Disponibilità parcheggi */
+#disponibilita {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+#posti-liberi {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.parcheggi-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.parcheggio {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    border: 1px solid #0b2545;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.parcheggio h3 {
+    color: #0b2545;
+    margin-bottom: 10px;
+}
+
+.parcheggio a {
+    color: #0b2545;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.parcheggio a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 40px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.footer-item img {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.footer-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.footer-item:last-child {
+    padding-right: 0;
+}
+
+footer p {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+strong, h3 {
+    color: #0b2545;
+}
+
+
+
