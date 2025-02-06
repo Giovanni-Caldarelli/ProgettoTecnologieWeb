@@ -11,7 +11,9 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../immagini/logo.png" alt="FastPark Logo">
+            <a href="homePage.html"> 
+                <img src="../immagini/logo.png" alt="FastPark Logo">
+            </a>
             <h1>FastPark</h1>
         </div>
         <nav>
@@ -24,8 +26,6 @@
         </nav>
     </header>
     
-
-    
     <main>
         <section id="intro">
             <h2>Trova il tuo parcheggio in pochi secondi</h2>
@@ -37,13 +37,47 @@
             <h2>Parcheggi Disponibili</h2>
             <p>Aggiornamenti in tempo reale sui posti auto disponibili.</p>
             <div id="posti-liberi" class="parcheggi-container"></div>
-        </section>             
+        </section>
+
+        <section id="come-funziona">
+            <h2>Come Funziona?</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="../immagini/step1.png" alt="Step 1">
+                    <p>Registrati o accedi al tuo account.</p>
+                </div>
+                <div class="step">
+                    <img src="../immagini/step2.png" alt="Step 2">
+                    <p>Scegli il parcheggio più vicino e prenota.</p>
+                </div>
+                <div class="step">
+                    <img src="../immagini/step3.png" alt="Step 3">
+                    <p>Effettua il pagamento in modo sicuro.</p>
+                </div>
+                <div class="step">
+                    <img src="../immagini/step4.png" alt="Step 4">
+                    <p>Goditi il tuo parcheggio senza stress!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq">
+            <h2>Domande Frequenti</h2>
+            <div class="faq-item">
+                <h3>Come posso prenotare un parcheggio?</h3>
+                <p>Puoi prenotare direttamente dalla homepage cliccando su "Prenota Ora".</p>
+            </div>
+            <div class="faq-item">
+                <h3>Posso cancellare una prenotazione?</h3>
+                <p>Sì, puoi cancellare fino a 2 ore prima dell'orario prenotato senza costi aggiuntivi.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Come avviene il pagamento?</h3>
+                <p>Puoi pagare online tramite carta di credito, PayPal o direttamente in sede.</p>
+            </div>
+        </section>
     </main>
     
-
-
-
-
     <footer>
         <div class="footer-container">
             <div class="footer-item">
@@ -83,9 +117,6 @@
             </div>
         </div>
     </footer>
-    
-
-
 
     <script>
         const parcheggi = [
@@ -111,9 +142,5 @@
     
         document.addEventListener("DOMContentLoaded", mostraDisponibilita);
     </script>
-    
-    
-    
 </body>
 </html>
-

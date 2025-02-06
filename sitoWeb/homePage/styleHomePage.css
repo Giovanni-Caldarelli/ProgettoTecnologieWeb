@@ -1,6 +1,6 @@
 /* Stili generali */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Poppins;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #13315c;
     color: white;
     padding: 15px;
 }
@@ -22,7 +22,7 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 100px;
     margin-right: 10px;
 }
 
@@ -40,28 +40,44 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+
+
 
 /* Sezione principale */
 #intro {
     text-align: center;
     padding: 50px;
-    background-color: #007BFF;
-    color: white;
+    background-color: #f4f4f4;
+    color: #13315c;
 }
 
 #intro h2 {
     margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: white;
-    color: #007BFF;
+    color: #13315c;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
 }
 
 /* Disponibilità parcheggi */
@@ -71,15 +87,9 @@ nav ul li a {
     background-color: white;
 }
 
-#posti-liberi {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
 .parcheggi-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
@@ -97,21 +107,35 @@ nav ul li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.parcheggio h3 {
-    color: #0b2545;
-    margin-bottom: 10px;
+/* Sezione "Come Funziona" */
+#come-funziona {
+    text-align: center;
+    padding: 40px;
+    background-color: #e3e3e3;
 }
 
-.parcheggio a {
-    color: #0b2545;
-    text-decoration: none;
-    font-weight: bold;
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.parcheggio a:hover {
-    text-decoration: underline;
+.step img {
+    height: 80px;
 }
 
+/* Sezione FAQ */
+#faq {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
 
 
 /* Footer */
