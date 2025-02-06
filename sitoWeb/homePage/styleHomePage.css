@@ -1,6 +1,6 @@
 /* Stili generali */
 body {
-    font-family: Poppins;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -55,8 +55,7 @@ nav ul li a:hover {
 #intro {
     text-align: center;
     padding: 50px;
-    background-color: #f4f4f4;
-    color: #13315c;
+    color: black;
 }
 
 #intro h2 {
@@ -83,28 +82,55 @@ nav ul li a:hover {
 /* Disponibilità parcheggi */
 #disponibilita {
     text-align: center;
-    padding: 30px;
-    background-color: white;
+    margin: 40px 20px;
+    padding: 20px 0;
 }
 
 .parcheggi-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .parcheggio {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    border: 1px solid #0b2545;
-    border-radius: 10px;
-    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     text-align: center;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    transition: transform 0.3s ease;
+}
+
+.parcheggio:hover {
+    transform: scale(1.05);
+}
+
+.parcheggio img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.parcheggio h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.parcheggio p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.parcheggio a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Sezione "Come Funziona" */

@@ -34,11 +34,36 @@
         </section>
         
         <section id="disponibilita">
-            <h2>Parcheggi Disponibili</h2>
+            <h2>I nostri parcheggi </h2>
             <p>Aggiornamenti in tempo reale sui posti auto disponibili.</p>
-            <div id="posti-liberi" class="parcheggi-container"></div>
+            <div class="parcheggi-container">
+                <div class="parcheggio">
+                    <a href="https://www.google.com/maps?q=Via+Toledo,+123,+80134+Napoli" target="_blank">
+                        <img src="../immagini/centrostorico.png" alt="Centro Storico">
+                    </a>
+                    <h3>Centro Storico</h3>
+                    <p>Indirizzo: Via Toledo, 123, 80134 Napoli</p>
+                    <p><strong>Posti disponibili:</strong> 12</p>
+                </div>
+                <div class="parcheggio">
+                    <a href="https://www.google.com/maps?q=Via+Caracciolo,+45,+80122+Napoli" target="_blank">
+                        <img src="../immagini/mergellina.png" alt="Mergellina">
+                    </a>
+                    <h3>Mergellina</h3>
+                    <p>Indirizzo: Via Caracciolo, 45, 80122 Napoli</p>
+                    <p><strong>Posti disponibili:</strong> 8</p>
+                </div>
+                <div class="parcheggio">
+                    <a href="https://www.google.com/maps?q=Via+Scarlatti,+67,+80127+Napoli" target="_blank">
+                        <img src="../immagini/vomero.png" alt="Vomero">
+                    </a>
+                    <h3>Vomero</h3>
+                    <p>Indirizzo: Via Scarlatti, 67, 80127 Napoli</p>
+                    <p><strong>Posti disponibili:</strong> 5</p>
+                </div>
+            </div>
         </section>
-
+        
         <section id="come-funziona">
             <h2>Come Funziona?</h2>
             <div class="steps">
@@ -56,7 +81,7 @@
                 </div>
                 <div class="step">
                     <img src="../immagini/step4.png" alt="Step 4">
-                    <p>Goditi il tuo parcheggio senza stress!</p>
+                    <p>Goditi il tuo parcheggio</p>
                 </div>
             </div>
         </section>
@@ -118,29 +143,5 @@
         </div>
     </footer>
 
-    <script>
-        const parcheggi = [
-            { zona: "Centro Storico", indirizzo:  "Via Toledo, 123, 80134 Napoli", posti: 12 },
-            { zona: "Mergellina", indirizzo: "Via Caracciolo, 45, 80122 Napoli", posti: 8 },
-            { zona: "Vomero", indirizzo: "Via Scarlatti, 67, 80127 Napoli", posti: 5 }
-        ];
-    
-        function mostraDisponibilita() {
-            const container = document.getElementById("posti-liberi");
-            container.innerHTML = ""; // Pulizia del contenitore
-    
-            parcheggi.forEach(parcheggio => {
-                container.innerHTML += `
-                    <div class="parcheggio">
-                        <h3>${parcheggio.zona}</h3>
-                        <p>Indirizzo: <a href="https://www.google.com/maps?q=${encodeURIComponent(parcheggio.indirizzo)}" target="_blank">${parcheggio.indirizzo}</a></p>
-                        <p><strong>Posti disponibili:</strong> ${parcheggio.posti}</p>
-                    </div>
-                `;
-            });
-        }
-    
-        document.addEventListener("DOMContentLoaded", mostraDisponibilita);
-    </script>
 </body>
 </html>
