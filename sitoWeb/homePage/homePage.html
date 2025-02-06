@@ -27,15 +27,43 @@
     </header>
     
     <main>
-        <section id="intro">
-            <h2>Trova il tuo parcheggio in pochi secondi</h2>
-            <p>Prenota un posto auto online in modo facile, sicuro e veloce.</p>
-            <a href="#prenotazione" class="btn">Prenota Ora</a>
+        <section id="prenotazione-compatta">
+            <h2>Prenota il tuo parcheggio</h2>
+            <div class="prenotazione-box">
+                <form id="prenotazione-form">
+                    <label for="sede">Sede</label>
+                    <select name="sede" id="sede">
+                        <option value="" disabled selected>-- Scegli una sede --</option>
+                        <option value="centro-storico">Centro Storico</option>
+                        <option value="mergellina">Mergellina</option>
+                        <option value="vomero">Vomero</option>
+                    </select>
+        
+                    <div class="date-time">
+                        <div>
+                            <label for="check-in">Check-in</label>
+                            <input type="date" id="check-in" name="check-in">
+                            <input type="time" id="check-in-time" name="check-in-time" value="12:00">
+                        </div>
+                        <div>
+                            <label for="check-out">Check-out</label>
+                            <input type="date" id="check-out" name="check-out">
+                            <input type="time" id="check-out-time" name="check-out-time" value="12:00">
+                        </div>
+                    </div>
+        
+                    <button type="submit" id="cerca">Cerca</button>
+                </form>
+            </div>
         </section>
+
+        
+        
+        
+        
         
         <section id="disponibilita">
             <h2>I nostri parcheggi </h2>
-            <p>Aggiornamenti in tempo reale sui posti auto disponibili.</p>
             <div class="parcheggi-container">
                 <div class="parcheggio">
                     <a href="https://www.google.com/maps?q=Via+Toledo,+123,+80134+Napoli" target="_blank">
@@ -43,7 +71,6 @@
                     </a>
                     <h3>Centro Storico</h3>
                     <p>Indirizzo: Via Toledo, 123, 80134 Napoli</p>
-                    <p><strong>Posti disponibili:</strong> 12</p>
                 </div>
                 <div class="parcheggio">
                     <a href="https://www.google.com/maps?q=Via+Caracciolo,+45,+80122+Napoli" target="_blank">
@@ -51,7 +78,6 @@
                     </a>
                     <h3>Mergellina</h3>
                     <p>Indirizzo: Via Caracciolo, 45, 80122 Napoli</p>
-                    <p><strong>Posti disponibili:</strong> 8</p>
                 </div>
                 <div class="parcheggio">
                     <a href="https://www.google.com/maps?q=Via+Scarlatti,+67,+80127+Napoli" target="_blank">
@@ -59,7 +85,6 @@
                     </a>
                     <h3>Vomero</h3>
                     <p>Indirizzo: Via Scarlatti, 67, 80127 Napoli</p>
-                    <p><strong>Posti disponibili:</strong> 5</p>
                 </div>
             </div>
         </section>
