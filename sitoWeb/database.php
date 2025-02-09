@@ -1,21 +1,14 @@
 <?php
-// Dati di connessione al database
-$host = "localhost";      // Server locale
-$port = "5432";           // Porta di default di PostgreSQL
-$dbname = "gruppo17";           // Nome del database (in questo caso TW)
-$user = "www";            // Utente richiesto dal professore
-$password = "tw2024";     // Password indicata dal professore
+$host = 'localhost';
+$port = '5432';
+$dbname = 'gruppo17';
+$user = 'www';
+$password = 'tw2024';
 
-try {
-    // Creazione della connessione
-    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-    // Messaggio di successo
-    echo "✅ Connessione riuscita al database '$dbname'!";
-} catch (PDOException $e) {
-    // Errore di connessione
-    echo "❌ Errore di connessione: " . $e->getMessage();
+if (!$conn) {
+    die('Impossibile connettersi al database.');
 }
 ?>
 
