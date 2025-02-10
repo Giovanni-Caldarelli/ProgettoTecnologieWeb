@@ -15,6 +15,13 @@ session_start();
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
 </head>
 
+
+
+
+
+
+
+
 <body>
     <header>
         <div class="logo">
@@ -26,7 +33,6 @@ session_start();
         <nav>
             <ul>
                 <li><a href="homePage.php">Home</a></li>
-                <li><a href="../prenotazione/prenotazione.php">Prenota</a></li>
                 <?php
                 if (isset($_SESSION['user_email'])) {
                     echo '<li><a href="../logout.php">Logout</a></li>';
@@ -35,30 +41,35 @@ session_start();
                 }
                 ?>
                 <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#tariffe">Tariffe</a></li>
+                <li><a href="#come-funziona">Guida Rapida</a></li>
             </ul>
         </nav>
+        
     </header>
     
+
     <main>
     <div class="layout-container">
-    <!-- Riquadro sinistro -->
     <section id="chi-siamo">
         <div class="box">
             <h2>Chi siamo</h2>
             <p>
-                Siamo un'azienda con oltre 20 anni di esperienza nel settore dei parcheggi, offrendo sicurezza, comodità e innovazione.
-                I nostri parcheggi sono situati in 3 punti strategici di Napoli.
+                Con oltre 20 anni di esperienza, siamo leader nel settore dei <br>
+                parcheggi, garantendo soluzioni affidabili, sicure e <br>
+                all'avanguardia. I nostri parcheggi, situati in tre punti strategici di <br>
+                Napoli, offrono comodità e facilità di accesso per ogni esigenza.
             </p>
             <h3>Posti disponibili in tempo reale</h3>
             <ul>
             <?php
-            require_once '../database.php'; // Modifica il percorso del file
+            require_once '../database.php';
             $query = "SELECT nome, posti_disponibili FROM parcheggi";
             $result = pg_query($conn, $query);
 
             if ($result) {
                 while ($row = pg_fetch_assoc($result)) {
-                    echo '<li>' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                    echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
                 }
             }
             ?>
@@ -66,7 +77,6 @@ session_start();
         </div>
     </section>
 
-    <!-- Sezione centrale -->
     <section id="prenotazione-compatta">
         <h2>Prenota il tuo parcheggio</h2>
         <div class="prenotazione-box">
@@ -94,31 +104,16 @@ session_start();
 
                 <?php
                 if (isset($_SESSION['user_email'])) {
-                    echo '<button type="submit" style="width: 100%; background-color: #8da9c4; color: white; padding: 10px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease;">Cerca</button>';
+                    echo '<button type="submit" class="btn-prenota">Cerca</button>';
                 } else {
-                    echo '<a href="../login/login.php" style="display: block; width: 100%; background-color: #8da9c4; color: white; padding: 10px; text-align: center; border-radius: 5px; font-size: 1rem; text-decoration: none; cursor: pointer; transition: background-color 0.3s ease;">Accedi per prenotare</a>';
+                    echo '<a href="../login/login.php" class="btn-login">Accedi per prenotare</a>';
                 }
                 ?>
              </form>
         </div>
     </section>
-
-    <!-- Riquadro destro -->
-    <section id="offerte-recensioni">
-        <div class="box">
-            <h2>Offerte</h2>
-            <ul>
-                <li>Sconto del 10% per prenotazioni settimanali</li>
-                <li>Parcheggia gratis il primo giorno a Mergellina</li>
-            </ul>
-            <h2>Recensioni</h2>
-            <p>"Servizio impeccabile! Il parcheggio era comodo e sicuro." - Mario Rossi</p>
-            <p>"Personale disponibile e prezzi competitivi." - Lucia Verdi</p>
-        </div>
-    </section>
-</div>
-
-
+    </div>
+        
 
         <section id="disponibilita">
             <h2>I nostri parcheggi</h2>
@@ -146,6 +141,61 @@ session_start();
                 </div>
             </div>
         </section>
+
+
+        <section id="tariffe">
+            <h2>Tariffe</h2>
+            <div class="tariffe-container">
+                <table>
+                    <thead>
+                     <tr>
+                        <th>Parcheggio</th>
+                        <th>Tariffa Oraria</th>
+                        <th>Tariffa Giornaliera</th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Centro Storico</td>
+                        <td>€ 2,00</td>
+                        <td>€ 20,00</td>
+                      </tr>
+                      <tr>
+                        <td>Mergellina</td>
+                        <td>€ 2,50</td>
+                        <td>€ 22,00</td>
+                     </tr>
+                     <tr>
+                        <td>Vomero</td>
+                        <td>€ 3,00</td>
+                        <td>€ 25,00</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+        <section id="recensioni">
+            <h2>Recensioni dei nostri clienti</h2>
+            <div class="recensioni-container">
+                <div class="recensione">
+                    <p>"Servizio impeccabile! Il parcheggio era comodo e sicuro." - <strong>Mario Rossi</strong></p>
+                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                </div>
+                <div class="recensione">
+                    <p>"Personale gentile e prezzi competitivi. Assolutamente consigliato!" - <strong>Lucia Verdi</strong></p>
+                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                </div>
+                <div class="recensione">
+                    <p>"Ottima esperienza! Ho trovato sempre parcheggio senza problemi." - <strong>Alessandro Bianchi</strong></p>
+                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                </div>
+           </div>
+        </section>
+
+
 
         <section id="come-funziona">
             <h2>Come Funziona?</h2>
