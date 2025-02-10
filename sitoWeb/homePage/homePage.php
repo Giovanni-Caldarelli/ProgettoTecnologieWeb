@@ -1,9 +1,16 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
     <title>FastPark - Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città">
+    <meta name="author" content="Giovanni Caldarelli, Raffaele Esposito, Federico Cervo">
+    <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
     <link rel="stylesheet" href="../risorse/css/styleHomePage.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
 </head>
@@ -11,51 +18,107 @@
 <body>
     <header>
         <div class="logo">
-            <a href="homePage.html"> 
+            <a href="homePage.php"> 
                 <img src="../risorse/immagini/logo.png" alt="FastPark Logo">
             </a>
             <h1>FastPark</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#prenotazione">Prenota</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="homePage.php">Home</a></li>
+                <li><a href="../prenotazione/prenotazione.php">Prenota</a></li>
+                <?php
+                if (isset($_SESSION['user_email'])) {
+                    echo '<li><a href="../logout.php">Logout</a></li>';
+                } else {
+                    echo '<li><a href="../login/login.php">Login</a></li>';
+                }
+                ?>
                 <li><a href="#contatti">Contatti</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section id="prenotazione-compatta">
-            <h2>Prenota il tuo parcheggio</h2>
-            <div class="prenotazione-box">
-                <form id="prenotazione-form">
-                    <label for="sede">Sede</label>
-                    <select name="sede" id="sede">
-                        <option value="" disabled selected>-- Scegli una sede --</option>
-                        <option value="centro-storico">Centro Storico</option>
-                        <option value="mergellina">Mergellina</option>
-                        <option value="vomero">Vomero</option>
-                    </select>
-        
-                    <div class="date-time">
-                        <div>
-                            <label for="check-in">Check-in</label>
-                            <input type="date" id="check-in" name="check-in">
-                            <input type="time" id="check-in-time" name="check-in-time" value="12:00">
-                        </div>
-                        <div>
-                            <label for="check-out">Check-out</label>
-                            <input type="date" id="check-out" name="check-out">
-                            <input type="time" id="check-out-time" name="check-out-time" value="12:00">
-                        </div>
+    <div class="layout-container">
+    <!-- Riquadro sinistro -->
+    <section id="chi-siamo">
+        <div class="box">
+            <h2>Chi siamo</h2>
+            <p>
+                Siamo un'azienda con oltre 20 anni di esperienza nel settore dei parcheggi, offrendo sicurezza, comodità e innovazione.
+                I nostri parcheggi sono situati in 3 punti strategici di Napoli.
+            </p>
+            <h3>Posti disponibili in tempo reale</h3>
+            <ul>
+            <?php
+            require_once '../database.php'; // Modifica il percorso del file
+            $query = "SELECT nome, posti_disponibili FROM parcheggi";
+            $result = pg_query($conn, $query);
+
+            if ($result) {
+                while ($row = pg_fetch_assoc($result)) {
+                    echo '<li>' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                }
+            }
+            ?>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sezione centrale -->
+    <section id="prenotazione-compatta">
+        <h2>Prenota il tuo parcheggio</h2>
+        <div class="prenotazione-box">
+            <form id="prenotazione-form">
+                <label for="sede">Sede</label>
+                <select name="sede" id="sede" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
+                    <option value="" disabled selected>-- Scegli una sede --</option>
+                    <option value="centro-storico">Centro Storico</option>
+                    <option value="mergellina">Mergellina</option>
+                    <option value="vomero">Vomero</option>
+                </select>
+
+                <div class="date-time">
+                    <div>
+                        <label for="check-in">Check-in</label>
+                        <input type="date" id="check-in" name="check-in" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
+                        <input type="time" id="check-in-time" name="check-in-time" value="12:00" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
                     </div>
-        
-                    <button type="submit" id="cerca">Cerca</button>
-                </form>
-            </div>
-        </section>
+                    <div>
+                        <label for="check-out">Check-out</label>
+                        <input type="date" id="check-out" name="check-out" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
+                        <input type="time" id="check-out-time" name="check-out-time" value="12:00" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
+                    </div>
+                </div>
+
+                <?php
+                if (isset($_SESSION['user_email'])) {
+                    echo '<button type="submit" style="width: 100%; background-color: #8da9c4; color: white; padding: 10px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease;">Cerca</button>';
+                } else {
+                    echo '<a href="../login/login.php" style="display: block; width: 100%; background-color: #8da9c4; color: white; padding: 10px; text-align: center; border-radius: 5px; font-size: 1rem; text-decoration: none; cursor: pointer; transition: background-color 0.3s ease;">Accedi per prenotare</a>';
+                }
+                ?>
+             </form>
+        </div>
+    </section>
+
+    <!-- Riquadro destro -->
+    <section id="offerte-recensioni">
+        <div class="box">
+            <h2>Offerte</h2>
+            <ul>
+                <li>Sconto del 10% per prenotazioni settimanali</li>
+                <li>Parcheggia gratis il primo giorno a Mergellina</li>
+            </ul>
+            <h2>Recensioni</h2>
+            <p>"Servizio impeccabile! Il parcheggio era comodo e sicuro." - Mario Rossi</p>
+            <p>"Personale disponibile e prezzi competitivi." - Lucia Verdi</p>
+        </div>
+    </section>
+</div>
+
+
 
         <section id="disponibilita">
             <h2>I nostri parcheggi</h2>
@@ -83,7 +146,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="come-funziona">
             <h2>Come Funziona?</h2>
             <div class="steps">
@@ -105,8 +168,10 @@
                 </div>
             </div>
         </section>
-        
-        <footer>
+    </main>
+    
+
+    <footer>
             <div class="footer-container">
                 <div class="footer-item">
                     <img src="../risorse/immagini/telecamera.png" alt="Sicurezza">
@@ -145,6 +210,6 @@
                 </div>
             </div>
         </footer>
-    </main>
+
 </body>
 </html>
