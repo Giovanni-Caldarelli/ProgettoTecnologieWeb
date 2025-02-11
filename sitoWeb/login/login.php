@@ -1,5 +1,42 @@
-<?php 
-session_start(); 
+<?php
+session_start();
+require_once '../database.php'; 
+
+$errore = "";
+
+// Controllo se è stato inviato il form
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = trim($_POST['nome'] ?? '');
+    $cognome = trim($_POST['cognome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    
+    if (empty($nome) || empty($cognome) || empty($email) || empty($password)) {
+        $errore = "Tutti i campi sono obbligatori.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errore = "Formato email non valido.";
+    } else {
+        // Controlla se l'utente esiste già
+        $query = "SELECT * FROM utenti WHERE email = $1";
+        $result = pg_query_params($conn, $query, array($email));
+        if (pg_num_rows($result) > 0) {
+            $errore = "Esiste già un account con questa email.";
+        } else {
+            // Hash della password
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+            $insert_query = "INSERT INTO utenti (nome, cognome, email, password) VALUES ($1, $2, $3, $4)";
+            $insert_result = pg_query_params($conn, $insert_query, array($nome, $cognome, $email, $hashed_password));
+
+            if ($insert_result) {
+                $_SESSION['user_email'] = $email;
+                header("Location: ../homePage/homePage.php");
+                exit();
+            } else {
+                $errore = "Errore durante la registrazione.";
+            }
+        }
+    }
+}
 ?>
 
 
@@ -13,7 +50,7 @@ session_start();
     <meta name="author" content="Giovanni Caldarelli, Raffaele Esposito, Federico Cervo">
     <meta name="description" content="FastPark - Effettua la registrazione oppure accedi per prenotare un parcheggio in pochi click">
     <link rel="stylesheet" href="../risorse/css/styleLogin.css"> 
-    <script defer src="../risorse/js/validazione.js"></script> 
+    <script src="../risorse/js/validazione.js" defer></script> 
 </head>
 <body>
     <header>
@@ -39,7 +76,7 @@ session_start();
             <!-- Form di Registrazione -->
             <section id="registrazione">
                 <h2>Registrati</h2>
-                <form action="processa_registrazione.php" method="POST" onsubmit="return validaRegistrazione(this);">
+                <form action="processa_registrazione.php" method="post" onsubmit="return validaRegistrazione(this);">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
 
