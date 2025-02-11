@@ -1,7 +1,5 @@
 <?php
 session_start();
-<?php
-session_start();
 require_once '../database.php'; // Connessione al database
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

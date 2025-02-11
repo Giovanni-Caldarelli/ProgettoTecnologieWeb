@@ -34,8 +34,8 @@ function validaRegistrazione(form) {
     }
 
     if (password1 !== password2) {
-        errorMsg += "Le due password non corrispondono.\n";
-        form.password1.focus();
+        errorMsg += "Le due password non \n";
+        form.password2.focus();
     }
 
     // Se ci sono errori, mostriamo un alert e blocchiamo l'invio
