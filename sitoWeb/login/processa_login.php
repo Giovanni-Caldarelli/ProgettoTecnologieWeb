@@ -19,10 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../homePage/homePage.php");
             exit();
         } else {
-            echo "Errore: Password errata.";
+            $_SESSION["errore_login"] = "Password errata.";
+            $_SESSION["sticky_email_login"] = $email; // Mantiene l'email inserita
+            header("Location: login.php");
+            exit();
         }
     } else {
-        echo "Errore: Nessun account trovato con questa email.";
+        $_SESSION["errore_login"] = "Email errata";
+        header("Location: login.php");
+        exit();
     }
 }
 ?>

@@ -1,34 +1,121 @@
+/* Stili generali */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.container {
+/* Header */
+header {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    max-width: 800px;
+    align-items: center;
+    background-image: linear-gradient(to right, #13315c, #8da9c4);
+    color: white;
+    padding: 15px;
 }
 
-.form-container {
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #8da9c4;
+    color: white;
+}
+
+/* Messaggio di benvenuto */
+#benvenuto {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
     background-color: white;
-    padding: 20px;
-    border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 45%;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
+#benvenuto h2 {
+    font-size: 24px;
+    color: #13315c;
+}
+
+#benvenuto p {
+    font-size: 18px;
+    color: #666;
+}
+
+.contenitore-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+#login, #registrazione {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #13315c;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #8da9c4;
+}
+
+
+/* Stile generale per i form */
 h2 {
     text-align: center;
+    color: #13315c;
 }
 
 label {
     display: block;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 input {
@@ -37,11 +124,13 @@ input {
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
+/* Pulsanti */
 button {
     width: 100%;
-    background-color: #003366;
+    background-color: #13315c;
     color: white;
     padding: 10px;
     border: none;
@@ -54,4 +143,22 @@ button {
 
 button:hover {
     background-color: #8da9c4;
+}
+
+/* Messaggi di errore/successo */
+p[style*="color: red"], p[style*="color: green"] {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Link tra login e registrazione */
+p a {
+    color: #13315c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    color: #8da9c4;
 }

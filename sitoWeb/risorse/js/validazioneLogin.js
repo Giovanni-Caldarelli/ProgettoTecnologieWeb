@@ -18,3 +18,6 @@ function validaLogin(form) {
 
     return true; // Se tutto è valido, permette l'invio del form
 }
+
+
+

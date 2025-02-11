@@ -27,14 +27,16 @@ function validaRegistrazione(form) {
 
     if (password1 === "") {
         errorMsg += "La password è obbligatoria.\n";
-        form.password1.focus();
-    } else if (password1.length < 6) {
-        errorMsg += "La password deve contenere almeno 6 caratteri.\n";
-        form.password1.focus();
+    } else if (password1.length < 8) {
+        errorMsg += "La password deve avere almeno 8 caratteri.\n";
+    } else if (!/[A-Z]/.test(password1)) {
+        errorMsg += "La password deve contenere almeno una lettera maiuscola.\n";
+    } else if (!/[0-9]/.test(password1)) {
+        errorMsg += "La password deve contenere almeno un numero.\n";
     }
 
     if (password1 !== password2) {
-        errorMsg += "Le due password non \n";
+        errorMsg += "Le due password non coincidono\n";
         form.password2.focus();
     }
 
@@ -45,4 +47,19 @@ function validaRegistrazione(form) {
     }
 
     return true; // Permette l'invio del modulo
+}
+
+
+
+
+
+function mostraRegistrazione() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("registrazione").style.display = "block";
+}
+
+
+function mostraLogin() {
+    document.getElementById("registrazione").style.display = "none";
+    document.getElementById("login").style.display = "block";
 }
