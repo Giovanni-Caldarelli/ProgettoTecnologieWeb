@@ -55,11 +55,11 @@ require_once '../database.php';
                     <button type="submit">Accedi</button>
                     <?php
                     if (isset($_SESSION["errore_login"])) {
-                        echo "<p style='color: red; text-align: center;'>" . $_SESSION["errore_login"] . "</p>";
+                        echo "<p class='errore-messaggio'>" . $_SESSION["errore_login"] . "</p>";
                         unset($_SESSION["errore_login"]); // Rimuove il messaggio dopo averlo mostrato
                     }
                     if (isset($_SESSION["successo_registrazione"])) {
-                        echo "<p style='color: green; text-align: center;'>" . $_SESSION["successo_registrazione"] . "</p>";
+                        echo "<p class='successo-messaggio'>" . $_SESSION["successo_registrazione"] . "</p>";
                         unset($_SESSION["successo_registrazione"]); // Rimuove il messaggio dopo averlo mostrato
                     }
                     ?>
@@ -92,7 +92,7 @@ require_once '../database.php';
                 <p>Hai già un account? <button onclick="mostraLogin()">Accedi</button></p>
                 <?php
                 if (isset($_SESSION["errore_registrazione"])) {
-                    echo "<p style='color: red; text-align: center; width:100%; '>" . $_SESSION["errore_registrazione"] . "</p>";
+                    echo "<p class='errore-messaggio'>" . $_SESSION["errore_registrazione"] . "</p>";
                     unset($_SESSION["errore_registrazione"]); // Elimina il messaggio dopo averlo mostrato
                 }
                 ?> 

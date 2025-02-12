@@ -14,6 +14,7 @@ header {
     background-image: linear-gradient(to right, #13315c, #8da9c4);
     color: white;
     padding: 10px;
+    height: 80px;
 }
 
 .logo {
@@ -51,12 +52,37 @@ nav ul li a:hover {
     color: white;
 }
 
+.benvenuto-utente {
+    font-size: 1rem;
+    color: white; /* Testo più leggibile */
+    padding: 8px 15px;
+    border-radius: 12px; /* Angoli più morbidi */
+    font-weight: normal; /* Rimuove il grassetto */
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+/* Effetto hover per migliorare il design */
+.benvenuto-utente:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
 
+.btn-area {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+}
 
-
-
-
+.btn-area:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
 
 

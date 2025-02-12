@@ -32,20 +32,28 @@ session_start();
         </div>
         <nav>
             <ul>
-                <li><a href="homePage.php">Home</a></li>
-                <?php
+               <li><a href="homePage.php">Home</a></li>
+               <li><a href="#contatti">Contatti</a></li>
+               <li><a href="#tariffe">Tariffe</a></li>
+               <li><a href="#come-funziona">Guida Rapida</a></li>
+               <?php
                 if (isset($_SESSION['user_email'])) {
                     echo '<li><a href="../logout.php">Logout</a></li>';
                 } else {
                     echo '<li><a href="../login/login.php">Login</a></li>';
                 }
                 ?>
-                <li><a href="#contatti">Contatti</a></li>
-                <li><a href="#tariffe">Tariffe</a></li>
-                <li><a href="#come-funziona">Guida Rapida</a></li>
             </ul>
         </nav>
-        
+        <?php
+        if (isset($_SESSION["user_nome"])) {
+            echo '<div class="benvenuto-utente">
+                    Benvenuto, ' . htmlspecialchars($_SESSION["user_nome"]) . '!<br>
+                    <a href="../area_riservata.php" class="btn-area">Area Riservata</a>
+                 </div>';
+        }
+        ?>
+
     </header>
     
 

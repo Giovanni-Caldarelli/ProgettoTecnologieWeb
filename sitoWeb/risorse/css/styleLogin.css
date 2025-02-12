@@ -14,6 +14,7 @@ header {
     background-image: linear-gradient(to right, #13315c, #8da9c4);
     color: white;
     padding: 15px;
+    height: 80px;
 }
 
 .logo {
@@ -22,7 +23,7 @@ header {
 }
 
 .logo img {
-    height: 60px;
+    height: 80px;
     margin-right: 10px;
 }
 
@@ -39,7 +40,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #003366;
     font-size: 1rem;
     padding: 5px 10px;
     border-radius: 5px;
@@ -106,6 +107,9 @@ button:hover {
 }
 
 
+
+
+
 /* Stile generale per i form */
 h2 {
     text-align: center;
@@ -125,6 +129,7 @@ input {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box; /* Assicura che il padding non allarghi l'input */
 }
 
 /* Pulsanti */
@@ -146,11 +151,22 @@ button:hover {
 }
 
 /* Messaggi di errore/successo */
-p[style*="color: red"], p[style*="color: green"] {
+.errore-messaggio, .successo-messaggio {
     text-align: center;
-    font-weight: bold;
-    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: normal; /* Rimuove il grassetto */
 }
+
+.errore-messaggio {
+    color: red;
+}
+
+.successo-messaggio {
+    color: green;
+}
+
 
 /* Link tra login e registrazione */
 p a {
@@ -162,3 +178,5 @@ p a {
 p a:hover {
     color: #8da9c4;
 }
+
+
