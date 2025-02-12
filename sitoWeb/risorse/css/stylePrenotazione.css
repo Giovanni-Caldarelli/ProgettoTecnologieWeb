@@ -1,0 +1,111 @@
+/* Stili generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, #13315c, #8da9c4);
+    color: white;
+    padding: 15px;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #8da9c4;
+    color: white;
+}
+
+/* Sezione del riepilogo della prenotazione */
+/* Sezione del riepilogo della prenotazione */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #13315c;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.riepilogo-box {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex; /* Aggiunto per il centro allineamento */
+    flex-direction: column; /* Allinea verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    text-align: center; /* Centra il testo all'interno */
+}
+
+.riepilogo-box p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.riepilogo-box strong {
+    color: #003366;
+}
+
+/* Pulsante di conferma prenotazione */
+.btn-conferma {
+    background-color: #13315c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn-conferma:hover {
+    background-color: #8da9c4;
+}

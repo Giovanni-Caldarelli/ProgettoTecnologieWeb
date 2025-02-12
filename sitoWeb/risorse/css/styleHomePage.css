@@ -152,16 +152,21 @@ nav ul li a:hover {
 
 .date-time {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centra gli elementi */
+    align-items: center; /* Allinea verticalmente */
     gap: 10px;
 }
 
 .date-time div {
     flex: 1;
+    display: flex;
+    flex-direction: column; /* Mantiene label e input allineati */
+    align-items: center; /* Centra gli input */
 }
 
 .date-time input {
-    width: 100%;
+    width: 95%; /* Riduci leggermente la larghezza */
+    text-align: center; /* Centra il testo all'interno */
 }
 
 #prenotazione-form button {

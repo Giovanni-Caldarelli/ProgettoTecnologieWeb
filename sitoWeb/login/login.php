@@ -11,7 +11,7 @@ require_once '../database.php';
     <title>FastPark - Login&Registrazione</title>
     <meta name="generator" content="Visual Studio Code">
     <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città,registrazione,login">
-    <meta name="author" content="Giovanni Caldarelli, Raffaele Esposito, Federico Cervo">
+    <meta name="author" content="Giovanni Caldarelli">
     <meta name="description" content="FastPark - Effettua la registrazione oppure accedi per prenotare un parcheggio in pochi click">
     <link rel="stylesheet" href="../risorse/css/styleLogin.css"> 
     <script src="../risorse/js/validazioneRegistrazione.js" defer></script> 

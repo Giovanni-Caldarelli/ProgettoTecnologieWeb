@@ -9,16 +9,13 @@ session_start();
     <meta charset="UTF-8">
     <meta name="generator" content="Visual Studio Code">
     <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città">
-    <meta name="author" content="Giovanni Caldarelli, Raffaele Esposito, Federico Cervo">
+    <meta name="author" content="Giovanni Caldarelli">
     <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
     <link rel="stylesheet" href="../risorse/css/styleHomePage.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
+    <script src="../risorse/js/validazionePrenotazione.js" defer></script>
+    <script src="../risorse/js/aggiornaParcheggi.js"></script>
 </head>
-
-
-
-
-
 
 
 
@@ -69,18 +66,18 @@ session_start();
                 Napoli, offrono comodità e facilità di accesso per ogni esigenza.
             </p>
             <h3>Posti disponibili in tempo reale</h3>
-            <ul>
-            <?php
-            require_once '../database.php';
-            $query = "SELECT nome, posti_disponibili FROM parcheggi";
-            $result = pg_query($conn, $query);
+            <ul id="lista-parcheggi">
+                <?php
+                require_once '../database.php'; // Manteniamo il PHP nel file
+                $query = "SELECT nome, posti_disponibili FROM parcheggi";
+                $result = pg_query($conn, $query);
 
-            if ($result) {
-                while ($row = pg_fetch_assoc($result)) {
-                    echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                if ($result) {
+                    while ($row = pg_fetch_assoc($result)) {
+                        echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                    }
                 }
-            }
-            ?>
+                ?>
             </ul>
         </div>
     </section>
@@ -88,13 +85,13 @@ session_start();
     <section id="prenotazione-compatta">
         <h2>Prenota il tuo parcheggio</h2>
         <div class="prenotazione-box">
-            <form id="prenotazione-form">
+            <form id="prenotazione-form" action="../prenotazione/prenotazione.php" method="POST" target="_blank">
                 <label for="sede">Sede</label>
                 <select name="sede" id="sede" <?php if (!isset($_SESSION['user_email'])) echo 'disabled'; ?>>
                     <option value="" disabled selected>-- Scegli una sede --</option>
-                    <option value="centro-storico">Centro Storico</option>
-                    <option value="mergellina">Mergellina</option>
-                    <option value="vomero">Vomero</option>
+                    <option value="Centro Storico">Centro Storico</option>
+                    <option value="Mergellina">Mergellina</option>
+                    <option value="Vomero">Vomero</option>
                 </select>
 
                 <div class="date-time">
@@ -117,7 +114,7 @@ session_start();
                     echo '<a href="../login/login.php" class="btn-login">Accedi per prenotare</a>';
                 }
                 ?>
-             </form>
+            </form>
         </div>
     </section>
     </div>
