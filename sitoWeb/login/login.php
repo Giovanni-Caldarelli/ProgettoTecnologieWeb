@@ -14,6 +14,7 @@ require_once '../database.php';
     <meta name="author" content="Giovanni Caldarelli">
     <meta name="description" content="FastPark - Effettua la registrazione oppure accedi per prenotare un parcheggio in pochi click">
     <link rel="stylesheet" href="../risorse/css/styleLogin.css"> 
+    <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
     <script src="../risorse/js/validazioneRegistrazione.js" defer></script> 
     <script src="../risorse/js/validazioneLogin.js" defer></script> 
 </head>
