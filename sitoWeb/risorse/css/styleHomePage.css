@@ -109,13 +109,14 @@ nav ul li a:hover {
 
 /* Prenotazione Section Compatta */
 #prenotazione-compatta {
-    order: 1;
+
     background-image: linear-gradient(to bottom, #8da9c4, white);
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 350px;
     margin: 0 auto;
+    padding: 10px 20px;
 }
 
 
@@ -340,10 +341,10 @@ nav ul li a:hover {
 
 /* Sezione Tariffe */
 #tariffe {
-    margin: 40px auto;
+    margin:0px;
     text-align: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -374,16 +375,14 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.tariffe-container tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+
 
 .tariffe-container tr:hover {
     background-color: #e6f7ff;
 }
 
 .tariffe-container td {
-    font-size: 1rem;
+    font-size:20px;
     color: #333;
 }
 
@@ -391,10 +390,10 @@ nav ul li a:hover {
 
 /* Sezione Recensioni */
 #recensioni {
-    margin: 40px auto;
+    margin: 0px ;
     padding: 20px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -438,6 +437,7 @@ nav ul li a:hover {
 
 /* Sezione "Come Funziona" */
 #come-funziona {
+    color:#13315c;
     text-align: center;
     padding: 20px;
     background-color: white;

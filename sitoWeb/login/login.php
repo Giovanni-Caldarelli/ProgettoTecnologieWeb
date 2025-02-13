@@ -30,7 +30,7 @@ require_once '../database.php';
                 <li><a href="../homePage/homePage.php">Home</a></li>
                 <li><a href="../homePage/homePage.php#contatti">Contatti</a></li>
                 <li><a href="../homePage/homePage.php#tariffe">Tariffe</a></li>
-                <li><a href="../homePage/homePage.php#come-funziona">Guida Rapida</a></li>
+                <li><a href="../homePage/homePage.php#come-funziona">Come Funziona</a></li>
             </ul>
         </nav>
     </header>

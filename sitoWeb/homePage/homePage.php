@@ -29,10 +29,10 @@ session_start();
         </div>
         <nav>
             <ul>
-               <li><a href="homePage.php">Home</a></li>
+               
                <li><a href="#contatti">Contatti</a></li>
                <li><a href="#tariffe">Tariffe</a></li>
-               <li><a href="#come-funziona">Guida Rapida</a></li>
+               <li><a href="#come-funziona">Come Funziona</a></li>
                <?php
                 if (isset($_SESSION['user_email'])) {
                     echo '<li><a href="../logout.php">Logout</a></li>';
