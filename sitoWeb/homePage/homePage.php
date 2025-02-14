@@ -46,7 +46,7 @@ session_start();
         if (isset($_SESSION["user_nome"])) {
             echo '<div class="benvenuto-utente">
                     Benvenuto, ' . htmlspecialchars($_SESSION["user_nome"]) . '!<br>
-                    <a href="../area_riservata.php" class="btn-area">Area Riservata</a>
+                    <a href="../profilo/areaprivata.php" class="btn-area">Area Riservata</a>
                  </div>';
         }
         ?>
@@ -71,12 +71,11 @@ session_start();
                 require_once '../database.php'; // Manteniamo il PHP nel file
                 $query = "SELECT nome, posti_disponibili FROM parcheggi";
                 $result = pg_query($conn, $query);
-
                 if ($result) {
                     while ($row = pg_fetch_assoc($result)) {
-                        echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                    echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
                     }
-                }
+                } 
                 ?>
             </ul>
         </div>

@@ -74,13 +74,14 @@ h2 {
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 500px;
     margin: 20px auto;
-    display: flex; /* Aggiunto per il centro allineamento */
-    flex-direction: column; /* Allinea verticalmente */
-    align-items: center; /* Centra orizzontalmente */
-    text-align: center; /* Centra il testo all'interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 
 .riepilogo-box p {
     font-size: 1rem;
@@ -92,20 +93,44 @@ h2 {
     color: #003366;
 }
 
-/* Pulsante di conferma prenotazione */
-.btn-conferma {
-    background-color: #13315c;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display: inline-block;
+/* Stile del form di pagamento */
+#payment-form {
+    width: 100%; /* Stessa larghezza del riepilogo */
+    max-width: 400px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.btn-conferma:hover {
+#card-element {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#card-errors {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+#submit {
+    background-color: #13315c;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#submit:hover {
     background-color: #8da9c4;
 }
+
+
