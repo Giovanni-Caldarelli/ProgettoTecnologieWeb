@@ -46,7 +46,7 @@ session_start();
         if (isset($_SESSION["user_nome"])) {
             echo '<div class="benvenuto-utente">
                     Benvenuto, ' . htmlspecialchars($_SESSION["user_nome"]) . '!<br>
-                    <a href="../profilo/areaprivata.php" class="btn-area">Area Riservata</a>
+                    <a href="../profilo/area_riservata.php" class="btn-area">Area Riservata</a>
                  </div>';
         }
         ?>

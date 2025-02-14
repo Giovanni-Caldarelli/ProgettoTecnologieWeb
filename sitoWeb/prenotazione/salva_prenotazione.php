@@ -31,5 +31,5 @@ if (!$result) {
 $prenotazione = pg_fetch_assoc($result);
 
 // Rispondiamo con un JSON valido per il JavaScript
-echo json_encode(['success' => true, 'redirect' => 'area_riservata.php?id=' . $prenotazione['id']]);
+echo json_encode(['success' => true, 'redirect' => '../profilo/area_riservata.php']);
 ?>
