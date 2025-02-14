@@ -13,14 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $utente = pg_fetch_assoc($result);
         
         if (password_verify($password, $utente['password'])) {
+            // ✅ Ora impostiamo `$_SESSION['nome_utente']` come richiesto da `salva_prenotazione.php`
+            $_SESSION['user_nome'] = $utente['nome']; 
             $_SESSION['user_email'] = $utente['email'];
-            $_SESSION['user_nome'] = $utente['nome'];
             $_SESSION['user_tipo'] = $utente['tipo_utente'];
+
             header("Location: ../homePage/homePage.php");
             exit();
         } else {
             $_SESSION["errore_login"] = "Password errata.";
-            $_SESSION["sticky_email_login"] = $email; // Mantiene l'email inserita
+            $_SESSION["sticky_email_login"] = $email;
             header("Location: login.php");
             exit();
         }

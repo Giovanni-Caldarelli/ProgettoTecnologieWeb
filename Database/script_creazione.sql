@@ -25,12 +25,10 @@ CREATE TABLE parcheggi (
 
 CREATE TABLE prenotazioni (
     id SERIAL PRIMARY KEY,
-    id_utente INT NOT NULL,
-    id_parcheggio INT NOT NULL,
+    nome_utente VARCHAR(100) NOT NULL,
+    nome_parcheggio VARCHAR(100) NOT NULL,
     data_prenotazione DATE NOT NULL,
-    ora_prenotazione TIME NOT NULL,
-    FOREIGN KEY (id_utente) REFERENCES utenti(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_parcheggio) REFERENCES parcheggi(id) ON DELETE CASCADE
+    ora_prenotazione TIME NOT NULL
 );
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www;
