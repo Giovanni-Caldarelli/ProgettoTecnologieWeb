@@ -18,6 +18,6 @@ INSERT INTO prenotazioni (nome_utente, nome_parcheggio, data_prenotazione, ora_p
 ('Francesco', 'Mergellina', '2025-06-20', '16:00:00'),
 ('Paola', 'Mergellina', '2025-07-05', '18:30:00'),
 
-('Giuseppe', 'Vomero', '2025-05-08', '08:30:00'),
+('Raffaella', 'Vomero', '2025-05-08', '08:30:00'),
 ('Chiara', 'Vomero', '2025-06-18', '17:15:00'),
 ('Andrea', 'Vomero', '2025-07-10', '20:00:00');
