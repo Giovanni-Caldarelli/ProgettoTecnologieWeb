@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_nome'])) {
 
 $user_nome = $_SESSION['user_nome'];
 
+
 // Recupera tutte le prenotazioni dell'utente
 $query = "SELECT * FROM prenotazioni WHERE nome_utente = $1 ORDER BY id DESC";
 $result = pg_query_params($conn, $query, [$user_nome]);
@@ -54,24 +55,26 @@ $prenotazioni = pg_fetch_all($result);
     </header>
 
     <main>
-    <h2>Benvenuto, <?php echo htmlspecialchars($user_nome); ?>!</h2>
-    <h3> Questa è la tua area riservata </h3>
-        <h2>Le tue prenotazioni</h2>
-        <?php
-        if ($prenotazioni) {
-            echo '<div class="lista-prenotazioni">';
-            foreach ($prenotazioni as $prenotazione) {
-                echo '<div class="prenotazione">';
-                echo '<p><strong>Parcheggio:</strong> ' . htmlspecialchars($prenotazione['nome_parcheggio']) . '</p>';
-                echo '<p><strong>Data:</strong> ' . htmlspecialchars($prenotazione['data_prenotazione']) . '</p>';
-                echo '<p><strong>Ora:</strong> ' . htmlspecialchars($prenotazione['ora_prenotazione']) . '</p>';
+    <h2>Benvenuto <?php echo htmlspecialchars($user_nome); ?>, questa è la tua area riservata  </h2>
+        <br>
+        <section id="prenotazioni">
+            <h3>Le tue prenotazioni</h3>
+            <?php
+            if ($prenotazioni) {
+                echo '<div class="lista-prenotazioni">';
+                foreach ($prenotazioni as $prenotazione) {
+                    echo '<div class="prenotazione">';
+                    echo '<p><strong>Parcheggio:</strong> ' . htmlspecialchars($prenotazione['nome_parcheggio']) . '</p>';
+                    echo '<p><strong>Data:</strong> ' . htmlspecialchars($prenotazione['data_prenotazione']) . '</p>';
+                    echo '<p><strong>Ora:</strong> ' . htmlspecialchars($prenotazione['ora_prenotazione']) . '</p>';
+                    echo '</div>';
+                }
                 echo '</div>';
-            }
-            echo '</div>';
-        } else {
-            echo '<p>Non hai ancora effettuato prenotazioni.</p>';
-        }
-        ?>
+                } else {
+                     echo '<p>Non hai ancora effettuato prenotazioni.</p>';
+                }
+            ?>
+        </section>
     </main>
 </body>
 </html>

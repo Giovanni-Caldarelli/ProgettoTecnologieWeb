@@ -18,8 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_email'] = $utente['email'];
             $_SESSION['user_tipo'] = $utente['tipo_utente'];
 
-            header("Location: ../homePage/homePage.php");
+            if ($utente['tipo_utente'] == 'admin') {
+                header("Location: ../gestione/admin.php"); // Reindirizza l'admin alla sua pagina
+            } else {
+                header("Location: ../homePage/homePage.php"); // Reindirizza gli utenti normali alla homepage
+            }
             exit();
+
         } else {
             $_SESSION["errore_login"] = "Password errata.";
             $_SESSION["sticky_email_login"] = $email;

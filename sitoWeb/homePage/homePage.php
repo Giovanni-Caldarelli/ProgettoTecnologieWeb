@@ -45,11 +45,12 @@ session_start();
         <?php
         if (isset($_SESSION["user_nome"])) {
             echo '<div class="benvenuto-utente">
-                    Benvenuto, ' . htmlspecialchars($_SESSION["user_nome"]) . '!<br>
-                    <a href="../profilo/area_riservata.php" class="btn-area">Area Riservata</a>
-                 </div>';
+            Benvenuto, ' . htmlspecialchars($_SESSION["user_nome"]) . '!<br>
+            <a href="' . ($_SESSION["user_tipo"] === "admin" ? "../gestione/admin.php" : "../profilo/area_riservata.php") . '" class="btn-area">Area Riservata</a>
+         </div>';
         }
         ?>
+
 
     </header>
     
