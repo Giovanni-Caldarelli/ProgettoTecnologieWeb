@@ -251,12 +251,14 @@ session_start();
                     <p>Telefono: +39 3385782927</p>
                     <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Toledo,+123,+80134+Napoli" target="_blank">Via Toledo, 123, 80134 Napoli</a></p>
                 </div>
+                <br>
                 <div class="contact">
                     <p><strong>Mergellina</strong></p>
                     <p>Email: <a href="mailto:r.esposito163@studenti.unisa.it">r.esposito163@studenti.unisa.it</a></p>
                     <p>Telefono: +39 3339197364</p>
                     <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Caracciolo,+45,+80122+Napoli" target="_blank">Via Caracciolo, 45, 80122 Napoli</a></p>
                 </div>
+                <br>
                 <div class="contact">
                     <p><strong>Vomero</strong></p>
                     <p>Email: <a href="mailto:f.cervo1@studenti.unisa.it">f.cervo1@studenti.unisa.it</a></p>

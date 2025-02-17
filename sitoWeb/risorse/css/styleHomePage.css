@@ -526,3 +526,21 @@ footer p {
 strong, h3 {
     color: #13315c;
 }
+
+/* Stile per i link degli indirizzi nel footer */
+.footer-contacts a {
+    color: #13315c; /* Colore fisso per i link */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+}
+
+/* Cambia colore quando si passa sopra col mouse */
+.footer-contacts a:hover {
+    color: #8da9c4;
+}
+
+/* Impedisce che i link già visitati cambino colore */
+.footer-contacts a:visited {
+    color: #13315c !important;
+}
+
