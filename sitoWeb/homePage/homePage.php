@@ -259,7 +259,7 @@ session_start();
                 </div>
                 <div class="contact">
                     <p><strong>Vomero</strong></p>
-                    <p>Email: <a href="mailto:f.cervo@studenti.unisa.it">f.cervo@studenti.unisa.it</a></p>
+                    <p>Email: <a href="mailto:f.cervo1@studenti.unisa.it">f.cervo1@studenti.unisa.it</a></p>
                     <p>Telefono: +39 3914783091</p>
                     <p>Indirizzo: <a href="https://www.google.com/maps?q=Via+Scarlatti,+67,+80127+Napoli" target="_blank">Via Scarlatti, 67, 80127 Napoli</a></p>
                 </div>
