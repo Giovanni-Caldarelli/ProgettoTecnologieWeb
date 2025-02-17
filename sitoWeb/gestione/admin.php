@@ -39,6 +39,7 @@ $parcheggi = [
     <meta name="author" content="Giovanni Caldarelli">
     <link rel="stylesheet" href="../risorse/css/styleAdmin.css"> 
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
+    <script src="../risorse/js/validazionePrenotazioneAdmin.js"></script>
 </head>
 
 
@@ -63,7 +64,7 @@ $parcheggi = [
         <h1>Dashboard Admin</h1>
 
         <h2>Aggiungi una nuova prenotazione</h2>
-        <form action="aggiungi_prenotazione.php" method="POST">
+        <form id="prenotazione-form" action="aggiungi_prenotazione.php" method="POST">
             <label>Nome Utente:</label>
             <input type="text" name="nome_utente" required>
 
