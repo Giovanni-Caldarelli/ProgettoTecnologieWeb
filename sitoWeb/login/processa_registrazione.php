@@ -18,11 +18,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Controllo se l'email esiste già nel database
-    $query = "SELECT * FROM utenti WHERE email = $1";
-    $result = pg_query_params($conn, $query, array($_SESSION["sticky_email"]));
+    $query_email = "SELECT * FROM utenti WHERE email = $1";
+    $result_email = pg_query_params($conn, $query_email, array($_SESSION["sticky_email"]));
 
-    if ($result && pg_num_rows($result) > 0) {
+    if ($result_email && pg_num_rows($result_email) > 0) {
         $_SESSION["errore_registrazione"] = "L'email è già registrata.";
+        header("Location: login.php");
+        exit();
+    }
+
+    // Controllo se il nome utente esiste già nel database
+    $query_nome = "SELECT * FROM utenti WHERE nome = $1";
+    $result_nome = pg_query_params($conn, $query_nome, array($_SESSION["sticky_nome"]));
+
+    if ($result_nome && pg_num_rows($result_nome) > 0) {
+        $_SESSION["errore_registrazione"] = "Questo nome utente è già in uso. Scegli un altro nome.";
         header("Location: login.php");
         exit();
     }
@@ -44,4 +54,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
