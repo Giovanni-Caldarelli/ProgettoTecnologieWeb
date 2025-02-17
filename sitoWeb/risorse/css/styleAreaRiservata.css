@@ -106,3 +106,37 @@ h2, h3 {
 }
 
 
+/* Stile per il messaggio informativo sulle prenotazioni */
+.info-prenotazione {
+    margin: 30px auto; /* Aggiunge spazio sopra e sotto */
+    padding: 15px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-size: 1rem;
+    color: #13315c;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stile per il pulsante "Contattaci" */
+.btn-contatti {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #13315c;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-contatti:hover {
+    background-color: #8da9c4;
+    transform: scale(1.05);
+}
+
