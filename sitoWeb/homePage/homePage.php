@@ -74,7 +74,7 @@ session_start();
                 $result = pg_query($conn, $query);
                 if ($result) {
                     while ($row = pg_fetch_assoc($result)) {
-                    echo '<li>🚗 ' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
+                    echo '<li>' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
                     }
                 } 
                 ?>
