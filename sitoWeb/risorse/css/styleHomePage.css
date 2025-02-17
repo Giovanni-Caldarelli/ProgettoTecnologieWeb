@@ -41,10 +41,10 @@
 .layout-container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Rende tutte le box della stessa altezza */
+    align-items: flex-start; /* Allinea gli elementi in alto */
     gap: 20px;
-    margin: 20px auto;
     max-width: 1200px;
+    margin: 20px auto;
 }
 
 /* Stile comune per i box */
@@ -515,5 +515,9 @@ strong, h3 {
 .footer-contacts a:visited {
     color: #13315c !important;
 }
+
+
+
+
 
 

@@ -57,30 +57,6 @@ session_start();
 
     <main>
     <div class="layout-container">
-    <section id="chi-siamo">
-        <div class="box">
-            <h2>Chi siamo</h2>
-            <p>
-                Con oltre 20 anni di esperienza, siamo leader nel settore dei <br>
-                parcheggi, garantendo soluzioni affidabili, sicure e <br>
-                all'avanguardia. I nostri parcheggi, situati in tre punti strategici di <br>
-                Napoli, offrono comodità e facilità di accesso per ogni esigenza.
-            </p>
-            <h3>Posti disponibili in tempo reale</h3>
-            <ul id="lista-parcheggi">
-                <?php
-                require_once '../database.php'; // Manteniamo il PHP nel file
-                $query = "SELECT nome, posti_disponibili FROM parcheggi";
-                $result = pg_query($conn, $query);
-                if ($result) {
-                    while ($row = pg_fetch_assoc($result)) {
-                    echo '<li>' . htmlspecialchars($row['nome']) . ': ' . htmlspecialchars($row['posti_disponibili']) . ' posti disponibili</li>';
-                    }
-                } 
-                ?>
-            </ul>
-        </div>
-    </section>
 
     <section id="prenotazione-compatta">
         <h2>Prenota il tuo parcheggio</h2>
@@ -117,7 +93,30 @@ session_start();
             </form>
         </div>
     </section>
-    </div>
+
+
+    <section id="chi-siamo">
+        <div class="box">
+            <h2>Chi siamo</h2>
+            <p>
+                Con oltre 20 anni di esperienza, siamo leader nel settore dei <br>
+                parcheggi, garantendo soluzioni affidabili, sicure e <br>
+                all'avanguardia. I nostri parcheggi, situati in tre punti strategici di <br>
+                Napoli, offrono comodità e facilità di accesso per ogni esigenza.
+            </p>
+            <h3>Posti disponibili in tempo reale</h3>
+            <ul id="lista-parcheggi">
+                <!-- I parcheggi verranno caricati dinamicamente da AJAX -->
+            </ul>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
         
 
         <section id="disponibilita">
@@ -270,3 +269,5 @@ session_start();
 
 </body>
 </html>
+
+
