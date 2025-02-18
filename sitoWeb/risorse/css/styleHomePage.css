@@ -39,14 +39,14 @@
 /* Sezione principale */
 /* Container principale per layout */
 .layout-container {
-    
     display: flex;
     justify-content: space-between;
-
+    align-items: flex-start; /* Mantiene l'allineamento dall'alto */
     gap: 20px;
     max-width: 1200px;
-    margin: 20px auto;
-    }
+    margin: 0 auto; /* Rimuove qualsiasi margine verticale extra */
+}
+
 
 /* Stile comune per i box */
 .layout-container .box,
@@ -68,15 +68,19 @@
 
 /* Prenotazione Section Compatta */
 #prenotazione-compatta {
-
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(to bottom, #8da9c4, white);
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1; 
     max-width: 350px;
-    margin: 0 auto;
+    height: auto; /* Rimosso 100% per evitare che si allunghi forzatamente */
+    margin: 23px 0 0 0;
     padding: 10px 20px;
 }
+
 
 
 #prenotazione-compatta h2 {
@@ -206,7 +210,14 @@
 #chi-siamo {
     order: 2;
     text-align: left;
+    flex: 1; /* Ridotto da 1.1 per non farlo troppo largo */
+    max-width: 600px; /* Limita la larghezza */
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Elimina margini verticali indesiderati */
+    height: auto; /* Mantiene un'altezza naturale */
 }
+
 
 #chi-siamo ul {
     list-style-type: none;
