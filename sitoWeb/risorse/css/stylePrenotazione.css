@@ -4,7 +4,21 @@
 /* Sezione del riepilogo della prenotazione */
 /* Sezione del riepilogo della prenotazione */
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+}
+
+.selezione-parcheggio {
+    background-color: white; /* 🔹 Sfondo bianco */
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -19,10 +33,7 @@ h2 {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
     text-align: center;
 }
 
@@ -39,19 +50,26 @@ h2 {
 
 /* Stile del form di pagamento */
 #payment-form {
-    width: 100%; /* Stessa larghezza del riepilogo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra il contenuto orizzontalmente */
+    justify-content: center; /* Centra verticalmente (se necessario) */
+    width: 100%; 
     max-width: 400px;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 auto; /* Centra il form nel contenitore */
 }
 
 #card-element {
+    width: 100%;
     padding: 8px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    text-align: center; /* Centra il testo all'interno */
 }
 
 #card-errors {
@@ -71,6 +89,8 @@ h2 {
     transition: background-color 0.3s ease;
     width: 100%;
     margin-top: 15px;
+    max-width: 300px; /* Limita la larghezza del pulsante */
+    text-align: center;
 }
 
 #submit:hover {
@@ -78,3 +98,77 @@ h2 {
 }
 
 
+
+#parcheggio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#auto {
+    width: 25px; /* 🔹 Mantiene l'auto piccola */
+    height: 55px;
+    cursor: grab;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+
+
+#mappa-parcheggio {
+    position: relative;
+    width: 500px;
+    height: auto;
+}
+
+#mappa-parcheggio img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.posto {
+    width: 25px; /* 🔹 Riduce la larghezza */
+    height: 55px; /* 🔹 Riduce l'altezza */
+    background-color: rgba(0, 255, 0, 0.4); /* 🔹 Rende il verde meno invadente */
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+}
+/* 🔹 Posizionamento corretto dei posti sulla mappa */
+/* 🔹 Posizionamento corretto dei posti sulla mappa */
+#posto-1 { top: 80px; left: 121px; }  /* Modifica i valori */
+#posto-2 { top: 80px; left: 200px; } /* Spostali esattamente sopra i posti vuoti */
+#posto-3 { top: 80px; left: 252px; }
+#posto-4 { top: 80px; left: 275px; }
+#posto-5 { top: 80px; left: 346px; }
+#posto-6 { top: 160px; left: 121px; }
+#posto-7 { top: 160px; left: 148px; }
+#posto-8 { top: 160px; left: 200px; }
+#posto-9 { top: 160px; left: 250px; }
+#posto-10 { top: 160px; left: 345px; }
+
+
+#conferma-posto {
+    background-color: #13315c; /* Stesso colore del pulsante "Paga" */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#conferma-posto:hover {
+    background-color: #8da9c4; /* Stesso effetto hover del pulsante "Paga" */
+}
+
+
+#conferma-posto:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}

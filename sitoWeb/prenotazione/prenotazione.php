@@ -49,6 +49,7 @@ if ($oreTotali >= 24) {
     <link rel="stylesheet" href="../risorse/css/stylePrenotazione.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="../risorse/js/dragdropParcheggio.js" defer></script>
 </head>
 
 
@@ -71,25 +72,57 @@ if ($oreTotali >= 24) {
     </header>
 
     <main>
-        <section class="riepilogo-box">
-            <h2>Dettagli della Prenotazione</h2>
-            <p><strong>Sede:</strong> <?php echo htmlspecialchars($sede); ?></p>
-            <p><strong>Check-in:</strong> <?php echo htmlspecialchars($checkIn) . " alle " . htmlspecialchars($checkInTime); ?></p>
-            <p><strong>Check-out:</strong> <?php echo htmlspecialchars($checkOut) . " alle " . htmlspecialchars($checkOutTime); ?></p>
-            <p><strong>Ore totali:</strong> <?php echo round($oreTotali, 2); ?> ore</p>
-            <p><strong>Tariffa oraria:</strong> €<?php echo number_format($tariffeOrarie[$sede], 2); ?> all'ora</p>
-            <p><strong>Tariffa giornaliera:</strong> €<?php echo $tariffeGiornaliere[$sede]; ?> al giorno</p>
-            <br>
-            <p><strong>Prezzo stimato:</strong> €<?php echo $prezzoStimato; ?></p>
 
-            <form id="payment-form">
-                <div id="card-element">
+    
+    <section class="selezione-parcheggio">
+        <h2>Seleziona il tuo posto auto</h2>
+        <p>Trascina l'icona dell'auto su un parcheggio disponibile</p>
+
+        <div id="parcheggio-container">
+            <img src="../risorse/immagini/auto.png" id="auto" alt="Auto" draggable="true">
+
+            <div id="mappa-parcheggio">
+                <img src="../risorse/immagini/mappa.png" alt="Mappa Parcheggio">
+                
+                <!-- Posti disponibili -->
+                <div class="posto" id="posto-1"></div>
+                <div class="posto" id="posto-2"></div>
+                <div class="posto" id="posto-3"></div>
+                <div class="posto" id="posto-4"></div>
+                <div class="posto" id="posto-5"></div>
+                <div class="posto" id="posto-6"></div>
+                <div class="posto" id="posto-7"></div>
+                <div class="posto" id="posto-8"></div>
+                <div class="posto" id="posto-9"></div>
+                <div class="posto" id="posto-10"></div>
+            </div>
+        </div>
+
+        <button id="conferma-posto" disabled>Conferma Posto</button>
+    </section>
+
+    <!-- 2️⃣ Sezione riepilogo prenotazione (SOTTO) -->
+    <section class="riepilogo-box">
+        <h2>Dettagli della Prenotazione</h2>
+        <p><strong>Sede:</strong> <?php echo htmlspecialchars($sede); ?></p>
+        <p><strong>Check-in:</strong> <?php echo htmlspecialchars($checkIn) . " alle " . htmlspecialchars($checkInTime); ?></p>
+        <p><strong>Check-out:</strong> <?php echo htmlspecialchars($checkOut) . " alle " . htmlspecialchars($checkOutTime); ?></p>
+        <p><strong>Ore totali:</strong> <?php echo round($oreTotali, 2); ?> ore</p>
+        <p><strong>Tariffa oraria:</strong> €<?php echo number_format($tariffeOrarie[$sede], 2); ?> all'ora</p>
+        <p><strong>Tariffa giornaliera:</strong> €<?php echo $tariffeGiornaliere[$sede]; ?> al giorno</p>
+        <br>
+        <p><strong>Prezzo stimato:</strong> €<?php echo $prezzoStimato; ?></p>
+
+        <!-- Form di pagamento -->
+        <form id="payment-form">
+            <div id="card-element">
                 <!-- Stripe inserirà il form per la carta qui -->
-                </div>
-                <div id="card-errors" role="alert"></div>
-                <button id="submit">Paga</button>
-            </form>
-        </section>
+            </div>
+            <div id="card-errors" role="alert"></div>
+            <button id="submit">Paga</button>
+        </form>
+    </section>
+
 
 
 
