@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="generator" content="Visual Studio Code">
     <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città">
-    <meta name="author" content="Giovanni Caldarelli">
+    <meta name="author" content="Giovanni Caldarelli,Raffaele Esposito, Federico Cervo">
     <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
     <link rel="stylesheet" href="../risorse/css/styleHomePage.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
@@ -100,10 +100,11 @@ session_start();
         <div class="box">
             <h2>Chi siamo</h2>
             <p>
-                Con oltre 20 anni di esperienza, siamo leader nel settore dei <br>
-                parcheggi, garantendo soluzioni affidabili, sicure e <br>
-                all'avanguardia. I nostri parcheggi, situati in tre punti strategici di <br>
-                Napoli, offrono comodità e facilità di accesso per ogni esigenza.
+            Fastpark è la soluzione ideale per chi cerca un parcheggio sicuro, veloce ed economico a Napoli. 
+            Con tre sedi strategiche – <b> Vomero, Mergellina e Centro Storico </b> – offriamo un servizio 
+            pratico e affidabile per chi vuole muoversi in città senza lo stress del parcheggio. 
+            Il nostro obiettivo è garantire  comodità e sicurezza , permettendoti di risparmiare tempo e denaro. 
+            Scegli Fastpark e parcheggia senza pensieri!
             </p>
             <h3>Posti disponibili in tempo reale</h3>
             <ul id="lista-parcheggi">
