@@ -414,7 +414,7 @@
 
 .slide {
     min-width: 280px;
-    min-height: 180px; 
+    height: 250px;
     padding: 30px;
     box-sizing: border-box;
     background: white;
