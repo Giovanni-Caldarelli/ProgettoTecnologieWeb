@@ -15,7 +15,8 @@ session_start();
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
     <script src="../risorse/js/validazionePrenotazione.js" defer></script>
     <script src="../risorse/js/aggiornaParcheggi.js" defer></script>
-    <script src="../risorse/js/geolocalizzazione.js"></script>
+    <script src="../risorse/js/geolocalizzazione.js" defer></script>
+    <script src="../risorse/js/sliderRecensioni.js" defer></script>
 </head>
 
 
@@ -185,23 +186,41 @@ session_start();
 
 
 
-        <section id="recensioni">
-            <h2>Recensioni dei nostri clienti</h2>
-            <div class="recensioni-container">
-                <div class="recensione">
-                    <p>"Servizio impeccabile! Il parcheggio era comodo e sicuro." - <strong>Mario Rossi</strong></p>
-                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+    <section id="recensioni">
+        <h2 class="title">Recensioni dei nostri clienti</h2>
+        <div class="slider-container">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <div class="slider">
+                <div class="slider-wrapper">
+                    <?php
+                    $recensioni = [
+                        "Facilissimo prenotare online, in pochi click ho trovato posto!",
+                        "Ottimo servizio, ho prenotato e parcheggiato senza problemi.",
+                        "La prenotazione è veloce e il parcheggio è ben organizzato.",
+                        "Sistema di prenotazione chiaro e prezzi trasparenti, consigliato!",
+                        "Finalmente un parcheggio che si può prenotare senza stress!",
+                        "Personale disponibile e parcheggio sempre in ordine.",
+                        "Ottima esperienza, parcheggio sicuro e facile da trovare.",
+                        "Prenotare online mi ha fatto risparmiare tempo, comodissimo!",
+                        "Servizio affidabile, mai più stress per trovare parcheggio.",
+                        "Il sito è intuitivo e la prenotazione è andata liscia, perfetto!"
+                    ];
+                    
+                    foreach ($recensioni as $index => $recensione) {
+                        echo '<div class="slide">
+                                <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                                <p class="date">' . (10 - $index) . ' Giorni Fa</p>
+                                <p>"' . $recensione . '"</p>
+                                <p class="verified">✔ Acquirente verificato</p>
+                              </div>';
+                    }
+                    ?>
                 </div>
-                <div class="recensione">
-                    <p>"Personale gentile e prezzi competitivi. Assolutamente consigliato!" - <strong>Lucia Verdi</strong></p>
-                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                </div>
-                <div class="recensione">
-                    <p>"Ottima esperienza! Ho trovato sempre parcheggio senza problemi." - <strong>Alessandro Bianchi</strong></p>
-                    <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                </div>
-           </div>
-        </section>
+            </div>
+            <button class="nav-btn" id="nextBtn">→</button>
+        </div>
+    </section>
+
 
 
 

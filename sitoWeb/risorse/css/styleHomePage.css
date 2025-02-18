@@ -330,10 +330,11 @@
 #tariffe {
     margin:0px;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
 }
 
 #tariffe h2 {
@@ -375,49 +376,103 @@
 
 
 
+
+
+
 /* Sezione Recensioni */
-#recensioni {
-    margin: 0px ;
-    padding: 20px;
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1100px;
+    margin: 30px auto;
+    min-height: 180px; /* Aumenta l'altezza della sezione */
+    padding: 5px 0; /* Aggiunge spazio sopra e sotto */
 }
 
-#recensioni h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+
+.title {
+    text-align: center; /* Centra il testo orizzontalmente */
+    width: 100%; /* Assicura che occupi tutta la larghezza */
+    margin-bottom: 5px; /* Distanza dal contenuto sottostante */
     color: #003366;
 }
 
-.recensioni-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 900px;
 }
 
-.recensione {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    align-items: center;
+}
+
+.slide {
+    min-width: 280px;
+    min-height: 180px; 
+    padding: 30px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 15px;
     text-align: left;
 }
 
-.recensione p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 10px;
+.stars {
+    color: gold;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-.recensione .stars {
-    color: #f4c430;
-    font-size: 1.2rem;
+.date {
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
 }
+
+.verified {
+    font-size: 14px;
+    color: #0044cc;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.verified::before {
+    color: green;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.nav-btn {
+    background: none;
+    border: 2px solid #003366;
+    color: #003366;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: #003366;
+    color: white;
+}
+
+
+
+
+
 
 
 
