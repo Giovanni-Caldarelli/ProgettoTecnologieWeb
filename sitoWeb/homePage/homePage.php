@@ -13,10 +13,13 @@ session_start();
     <meta name="description" content="FastPark - Prenota e gestisci il tuo parcheggio online in modo semplice e sicuro.">
     <link rel="stylesheet" href="../risorse/css/styleHomePage.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="../risorse/js/validazionePrenotazione.js" defer></script>
     <script src="../risorse/js/aggiornaParcheggi.js" defer></script>
     <script src="../risorse/js/geolocalizzazione.js" defer></script>
     <script src="../risorse/js/sliderRecensioni.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
+    <script src="../risorse/js/gestioneMappa.js" defer></script>
 </head>
 
 
@@ -149,6 +152,11 @@ session_start();
     </div>
 </section>
 
+
+
+        <section id="mappa">
+            <div id="map-all" class="full-width-map"></div>
+        </section>
 
 
 
