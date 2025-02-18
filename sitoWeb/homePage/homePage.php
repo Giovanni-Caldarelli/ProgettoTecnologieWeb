@@ -14,7 +14,8 @@ session_start();
     <link rel="stylesheet" href="../risorse/css/styleHomePage.css">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
     <script src="../risorse/js/validazionePrenotazione.js" defer></script>
-    <script src="../risorse/js/aggiornaParcheggi.js"></script>
+    <script src="../risorse/js/aggiornaParcheggi.js" defer></script>
+    <script src="../risorse/js/geolocalizzazione.js"></script>
 </head>
 
 
@@ -119,32 +120,34 @@ session_start();
 
         
 
-        <section id="disponibilita">
-            <h2>I nostri parcheggi</h2>
-            <div class="parcheggi-container">
-                <div class="parcheggio">
-                    <a href="https://www.google.com/maps?q=Via+Toledo,+123,+80134+Napoli" target="_blank">
-                        <img src="../risorse/immagini/centrostorico.png" alt="Centro Storico">
-                    </a>
-                    <h3>Centro Storico</h3>
-                    <p>Indirizzo: Via Toledo, 123, 80134 Napoli</p>
-                </div>
-                <div class="parcheggio">
-                    <a href="https://www.google.com/maps?q=Via+Caracciolo,+45,+80122+Napoli" target="_blank">
-                        <img src="../risorse/immagini/mergellina.png" alt="Mergellina">
-                    </a>
-                    <h3>Mergellina</h3>
-                    <p>Indirizzo: Via Caracciolo, 45, 80122 Napoli</p>
-                </div>
-                <div class="parcheggio">
-                    <a href="https://www.google.com/maps?q=Via+Scarlatti,+67,+80127+Napoli" target="_blank">
-                        <img src="../risorse/immagini/vomero.png" alt="Vomero">
-                    </a>
-                    <h3>Vomero</h3>
-                    <p>Indirizzo: Via Scarlatti, 67, 80127 Napoli</p>
-                </div>
-            </div>
-        </section>
+<section id="disponibilita">
+    <h2>I nostri parcheggi</h2>
+    <div class="parcheggi-container">
+        <div class="parcheggio">
+            <a href="#" target="_blank">
+                <img src="../risorse/immagini/centrostorico.png" alt="Centro Storico">
+            </a>
+            <h3>Centro Storico</h3>
+            <p>Indirizzo: Via Toledo, 123, Napoli</p>
+        </div>
+        <div class="parcheggio">
+            <a href="#" target="_blank">
+                <img src="../risorse/immagini/mergellina.png" alt="Mergellina">
+            </a>
+            <h3>Mergellina</h3>
+            <p>Indirizzo: Via Caracciolo, 45, Napoli</p>
+        </div>
+        <div class="parcheggio">
+            <a href="#" target="_blank">
+                <img src="../risorse/immagini/vomero.png" alt="Vomero">
+            </a>
+            <h3>Vomero</h3>
+            <p>Indirizzo: Via Scarlatti, 67, Napoli</p>
+        </div>
+    </div>
+</section>
+
+
 
 
         <section id="tariffe">
