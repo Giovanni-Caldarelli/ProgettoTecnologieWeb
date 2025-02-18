@@ -209,7 +209,7 @@ session_start();
                     foreach ($recensioni as $index => $recensione) {
                         echo '<div class="slide">
                                 <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                                <p class="date">' . (10 - $index) . ' Giorni Fa</p>
+                                <p class="date">' . (1 + $index) . ' Giorni Fa</p>
                                 <p>"' . $recensione . '"</p>
                                 <p class="verified">✔ Acquirente verificato</p>
                               </div>';
