@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../database.php'; // Connessione al database
+require_once '../database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
@@ -13,18 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $utente = pg_fetch_assoc($result);
         
         if (password_verify($password, $utente['password'])) {
-            // ✅ Ora impostiamo `$_SESSION['nome_utente']` come richiesto da `salva_prenotazione.php`
             $_SESSION['user_nome'] = $utente['nome']; 
             $_SESSION['user_email'] = $utente['email'];
             $_SESSION['user_tipo'] = $utente['tipo_utente'];
 
             if ($utente['tipo_utente'] == 'admin') {
-                header("Location: ../gestione/admin.php"); // Reindirizza l'admin alla sua pagina
+                header("Location: ../gestione/admin.php"); 
             } else {
-                header("Location: ../homePage/homePage.php"); // Reindirizza gli utenti normali alla homepage
+                header("Location: ../homePage/homePage.php"); 
             }
             exit();
-
         } else {
             $_SESSION["errore_login"] = "Password errata.";
             $_SESSION["sticky_email_login"] = $email;
@@ -32,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else {
-        $_SESSION["errore_login"] = "Email errata";
+        $_SESSION["errore_login"] = "Email non registrata";
         header("Location: login.php");
         exit();
     }

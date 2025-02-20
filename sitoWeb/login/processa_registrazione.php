@@ -10,24 +10,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password1 = $_POST["password1"];
     $password2 = $_POST["password2"];
 
-    // Controllo se le password coincidono
     if ($password1 !== $password2) {
         $_SESSION["errore_registrazione"] = "Errore: Le password non corrispondono.";
         header("Location: login.php");
         exit();
     }
 
-    // Controllo se l'email esiste già nel database
+
     $query_email = "SELECT * FROM utenti WHERE email = $1";
     $result_email = pg_query_params($conn, $query_email, array($_SESSION["sticky_email"]));
-
     if ($result_email && pg_num_rows($result_email) > 0) {
         $_SESSION["errore_registrazione"] = "L'email è già registrata.";
         header("Location: login.php");
         exit();
     }
-
-    // Controllo se il nome utente esiste già nel database
     $query_nome = "SELECT * FROM utenti WHERE nome = $1";
     $result_nome = pg_query_params($conn, $query_nome, array($_SESSION["sticky_nome"]));
 
@@ -37,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Inserimento nel database con password criptata
+    
     $password_hash = password_hash($password1, PASSWORD_DEFAULT);
     $query = "INSERT INTO utenti (nome, cognome, email, password) VALUES ($1, $2, $3, $4)";
     $result = pg_query_params($conn, $query, array($_SESSION["sticky_nome"], $_SESSION["sticky_cognome"], $_SESSION["sticky_email"], $password_hash));

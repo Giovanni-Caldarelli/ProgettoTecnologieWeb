@@ -13,7 +13,7 @@
 }
 
 .benvenuto-utente:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #FFFFFF4D;
     transform: scale(1.05);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .btn-area:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #FFFFFF4D;
 }
 
 
@@ -54,7 +54,7 @@
     background-color: white;
     padding: 14px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #1A000000;
     margin-top: 20px;
     min-height: 220px;
 }
@@ -66,7 +66,7 @@
     background-image: linear-gradient(to bottom, #8da9c4, white);
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #1A000000;
     flex: 1; 
     max-width: 350px;
     height: auto; 
@@ -85,7 +85,7 @@
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px #1A000000;
 }
 
 #prenotazione-form label {
@@ -246,11 +246,9 @@
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #1A000000;
     overflow: hidden;
     text-align: center;
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
     transition: transform 0.3s ease;
 }
 
@@ -282,7 +280,7 @@
     width: 100%;
     height: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px #1A000000;
 }
 
 
@@ -293,7 +291,7 @@
     padding: 20px 0;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #1A000000;
     min-height: 300px;
 }
 
@@ -370,7 +368,7 @@
     box-sizing: border-box;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px #1A000000;
     margin: 0 15px;
     text-align: left;
 }
