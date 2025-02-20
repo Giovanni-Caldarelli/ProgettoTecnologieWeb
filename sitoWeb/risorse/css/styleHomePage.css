@@ -1,18 +1,17 @@
 @import url("header.css");
 
-
+/*Header*/
 .benvenuto-utente {
     font-size: 1rem;
-    color: white; /* Testo più leggibile */
+    color: white; 
     padding: 8px 15px;
-    border-radius: 12px; /* Angoli più morbidi */
-    font-weight: normal; /* Rimuove il grassetto */
+    border-radius: 12px; 
+    font-weight: normal; 
     text-align: center;
     white-space: nowrap;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Effetto hover per migliorare il design */
 .benvenuto-utente:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
@@ -36,21 +35,18 @@
 
 
 
-/* Sezione principale */
-/* Container principale per layout */
+/*Main*/
 .layout-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Mantiene l'allineamento dall'alto */
+    align-items: flex-start; 
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto; /* Rimuove qualsiasi margine verticale extra */
+    margin: 0 auto; 
+    overflow: auto;
 }
 
-
-/* Stile comune per i box */
-.layout-container .box,
-.prenotazione-box {
+.layout-container .box, .prenotazione-box {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -63,10 +59,7 @@
     min-height: 220px;
 }
 
-
-
-
-/* Prenotazione Section Compatta */
+/*Prenotazione*/
 #prenotazione-compatta {
     display: flex;
     flex-direction: column;
@@ -76,12 +69,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex: 1; 
     max-width: 350px;
-    height: auto; /* Rimosso 100% per evitare che si allunghi forzatamente */
+    height: auto; 
     margin: 23px 0 0 0;
     padding: 10px 20px;
 }
-
-
 
 #prenotazione-compatta h2 {
     font-size: 1.5rem;
@@ -104,9 +95,7 @@
     margin-bottom: 5px;
 }
 
-#prenotazione-form select,
-#prenotazione-form input[type="date"],
-#prenotazione-form input[type="time"] {
+#prenotazione-form select, #prenotazione-form input[type="date"], #prenotazione-form input[type="time"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -117,21 +106,20 @@
 
 .date-time {
     display: flex;
-    justify-content: center; /* Centra gli elementi */
-    align-items: center; /* Allinea verticalmente */
+    justify-content: center; 
+    align-items: center; 
     gap: 10px;
 }
 
 .date-time div {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Mantiene label e input allineati */
-    align-items: center; /* Centra gli input */
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .date-time input {
-    width: 95%; /* Riduci leggermente la larghezza */
-    text-align: center; /* Centra il testo all'interno */
+    text-align: center; 
 }
 
 #prenotazione-form button {
@@ -147,7 +135,7 @@
     margin-top: 25px;
 }
 
-#prenotazione-form button:hover {
+#prenotazione-form button:hover , #prenotazione-form a:hover{
     background-color: #5d7990;
 }
 
@@ -165,31 +153,11 @@
     transition: background-color 0.3s ease;
 }
 
-#prenotazione-form a:hover {
-    background-color: #5d7990;
-}
-
-/* Stile per il pulsante "Cerca" */
-.btn-prenota {
-    width: 100%;
-    background-color: #8da9c4;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-prenota:hover {
-    background-color: #5d7990;
-}
-
-/* Stile per il link "Accedi per prenotare" */
+.btn-prenota, 
 .btn-login {
     display: block;
-    width: 100%;
+    width: 80%;  
+    max-width: 300px; 
     background-color: #8da9c4;
     color: white;
     padding: 10px;
@@ -199,31 +167,33 @@
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 0 auto;  
 }
 
+.btn-prenota:hover, 
 .btn-login:hover {
     background-color: #5d7990;
 }
 
 
-/* Sezione "Chi siamo" */
+/*Chi siamo*/
 #chi-siamo {
     order: 2;
     text-align: left;
-    flex: 1; /* Ridotto da 1.1 per non farlo troppo largo */
-    max-width: 600px; /* Limita la larghezza */
+    flex: 1; 
+    max-width: 600px; 
     display: flex;
     flex-direction: column;
-    margin: 0; /* Elimina margini verticali indesiderati */
-    height: auto; /* Mantiene un'altezza naturale */
+    margin: 0; 
+    height: auto; 
 }
-
 
 #chi-siamo ul {
     list-style-type: none;
     padding-left: 0;
     margin: 15px 0;
 }
+
 #chi-siamo h2 {
     color: #13315c;
 }
@@ -237,15 +207,14 @@
 #chi-siamo ul li {
     display: flex;
     align-items: center;
-    font-size: 1rem; /* Testo più grande */
+    font-size: 1rem; 
     font-weight: bold;
     color: #13315c;
-    background-color: #e3eaf3; /* Sfondo leggero */
+    background-color: #e3eaf3; 
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 5px;
 }
-
 
 #chi-siamo ul li::before {
 
@@ -255,25 +224,13 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* Disponibilità parcheggi */
-#disponibilita {
+/*Parcheggi */
+#Parcheggi {
     color: #f4f4f4;
     background-image: radial-gradient(circle, #134074,#8da9c4);
     text-align: center;
     margin: 40px 0px 0px 0px;
     padding: 5px 0px 20px 0px;
-   
 }
 
 .parcheggi-container {
@@ -303,7 +260,8 @@
 
 .parcheggio img {
     width: 100%;
-    height: 320px;
+    height: auto;
+    max-height: 320px; 
     border-bottom: 1px solid #ddd;
 }
 
@@ -319,16 +277,8 @@
     color: #555;
 }
 
-.parcheggio a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-
-
-
-.full-width-map {
+/*Mappa*/
+.map {
     width: 100%;
     height: 500px;
     border-radius: 10px;
@@ -336,8 +286,7 @@
 }
 
 
-
-/* Sezione Tariffe */
+/*Tariffe */
 #tariffe {
     margin:0px;
     text-align: center;
@@ -361,8 +310,7 @@
     border-collapse: collapse;
 }
 
-.tariffe-container th,
-.tariffe-container td {
+.tariffe-container th, .tariffe-container td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
@@ -374,8 +322,6 @@
     font-weight: bold;
 }
 
-
-
 .tariffe-container tr:hover {
     background-color: #e6f7ff;
 }
@@ -386,11 +332,7 @@
 }
 
 
-
-
-
-
-/* Sezione Recensioni */
+/*Recensioni */
 .slider-container {
     display: flex;
     align-items: center;
@@ -398,18 +340,16 @@
     position: relative;
     max-width: 1100px;
     margin: 30px auto;
-    min-height: 180px; /* Aumenta l'altezza della sezione */
-    padding: 5px 0; /* Aggiunge spazio sopra e sotto */
+    min-height: 180px; 
+    padding: 5px 0; 
 }
-
 
 .title {
-    text-align: center; /* Centra il testo orizzontalmente */
-    width: 100%; /* Assicura che occupi tutta la larghezza */
-    margin-bottom: 5px; /* Distanza dal contenuto sottostante */
+    text-align: center; 
+    width: 100%; 
+    margin-bottom: 5px; 
     color: #003366;
 }
-
 
 .slider {
     display: flex;
@@ -481,14 +421,7 @@
 }
 
 
-
-
-
-
-
-
-
-/* Sezione "Come Funziona" */
+/*Come Funziona*/
 #come-funziona {
     color:#13315c;
     text-align: center;
@@ -507,20 +440,7 @@
     height: 80px;
 }
 
-/* Sezione FAQ */
-#faq {
-    text-align: center;
-    padding: 5px 0px 0px 0px ;
-    margin: 0px 0px 0px 0px;
-    background-color: #fff;
-    
-}
 
-.faq-item {
-    margin-bottom: px;
-    padding: 10px;
-   
-}
 
 
 /* Footer */
@@ -528,7 +448,6 @@ footer {
     border-top: 1px solid #134074;
     background-image:linear-gradient(to top,#8da9c4,white); ;
     padding: 40px 20px;
-    
 }
 
 .footer-container {
@@ -537,7 +456,6 @@ footer {
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
- 
 }
 
 .footer-item {
@@ -565,10 +483,6 @@ footer {
     line-height: 1.6;
 }
 
-.footer-item:last-child {
-    padding-right: 0;
-}
-
 footer p {
     margin-top: 30px;
     font-size: 14px;
@@ -580,19 +494,16 @@ strong, h3 {
     color: #13315c;
 }
 
-/* Stile per i link degli indirizzi nel footer */
 .footer-contacts a {
-    color: #13315c; /* Colore fisso per i link */
-    text-decoration: none; /* Rimuove la sottolineatura */
+    color: #13315c; 
+    text-decoration: none; 
     font-weight: bold;
 }
 
-/* Cambia colore quando si passa sopra col mouse */
 .footer-contacts a:hover {
     color: #8da9c4;
 }
 
-/* Impedisce che i link già visitati cambino colore */
 .footer-contacts a:visited {
     color: #13315c !important;
 }
