@@ -19,3 +19,4 @@ if (!empty($_POST['nome_utente']) && !empty($_POST['nome_parcheggio']) && !empty
 
 header("Location: admin.php");
 exit();
+?>

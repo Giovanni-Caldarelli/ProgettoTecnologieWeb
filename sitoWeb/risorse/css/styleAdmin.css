@@ -1,6 +1,5 @@
 @import url("header.css");
 
-/* Contenitore principale */
 main {
     width: 90%;
     max-width: 1000px;
@@ -8,7 +7,7 @@ main {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px #0000001A;
 }
 
 h1 {
@@ -16,7 +15,7 @@ h1 {
     color: #13315c;
 }
 
-/* Form compatto su una sola riga */
+/* Form */
 form {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +24,7 @@ form {
     background: #e3eaf3;
     padding: 10px;
     border-radius: 8px;
-    margin-bottom: 100px; /* Aumenta la distanza tra form e tabella */
+    margin-bottom: 100px; 
 }
 
 form label {
@@ -40,20 +39,21 @@ form input, form select {
     width: auto;
 }
 
-form button {
+button {
+    display: block;
+    margin: 10px auto; 
+    padding: 10px 15px;
+    font-size: 1rem;
     background-color: #13315c;
     color: white;
     border: none;
-    padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
 }
 
-form button:hover {
-    background-color: #0a223f;
+button:hover {
+    background-color: #0a1f3f;
 }
-
 
 /* Tabelle delle prenotazioni */
 table {
@@ -83,34 +83,9 @@ table td a:hover {
     text-decoration: underline;
 }
 
-/* Centrare il pulsante "Aggiungi Prenotazione" */
-.form-container {
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-button[type="submit"] {
-    display: block;
-    margin: 10px auto; /* Auto per centrare orizzontalmente */
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #13315c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0a1f3f;
-}
-
-
-/* Centrare i nomi dei parcheggi */
 h2 {
     text-align: center;
     font-size: 24px;
-    font-weight: bold;
     margin-top: 20px;
 }
 

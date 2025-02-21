@@ -2,7 +2,6 @@
 session_start();
 require_once '../database.php';
 
-// Controllo se l'utente è un admin
 if ($_SESSION['user_tipo'] !== 'admin') {
     die("Accesso negato. Non sei un amministratore.");
 }
@@ -28,8 +27,6 @@ $parcheggi = [
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -42,10 +39,7 @@ $parcheggi = [
     <script src="../risorse/js/validazionePrenotazioneAdmin.js"></script>
 </head>
 
-
-
 <body>
-
     <header>
         <div class="logo">
             <a href="../homePage/homePage.php"> 
@@ -62,12 +56,11 @@ $parcheggi = [
 
     <main> 
         <h1>Dashboard Admin</h1>
-
         <h2>Aggiungi una nuova prenotazione</h2>
+
         <form id="prenotazione-form" action="aggiungi_prenotazione.php" method="POST">
             <label>Nome Utente:</label>
             <input type="text" name="nome_utente" required>
-
             <label>Parcheggio:</label>
             <select name="nome_parcheggio" required>
                 <?php
@@ -76,13 +69,10 @@ $parcheggi = [
                 }
                ?>
             </select>
-
             <label>Data:</label>
             <input type="date" name="data_prenotazione" required>
-
             <label>Ora:</label>
             <input type="time" name="ora_prenotazione" required>
-
             <button type="submit">Aggiungi Prenotazione</button>
         </form>
 
@@ -96,24 +86,21 @@ $parcheggi = [
                     <th>Ora</th>
                     <th>Azioni</th>
                 </tr>";
-
             if (!empty($lista_prenotazioni)) {
                 foreach ($lista_prenotazioni as $prenotazione) {
-                    echo "<tr>
-                        <td>" . htmlspecialchars($prenotazione['nome_utente']) . "</td>
-                        <td>" . htmlspecialchars($prenotazione['data_prenotazione']) . "</td>
-                        <td>" . htmlspecialchars($prenotazione['ora_prenotazione']) . "</td>
-                        <td>
-                            <a href='rimuovi_prenotazione.php?utente=" . urlencode($prenotazione['nome_utente']) . "&parcheggio=" . urlencode($nome_parcheggio) . "&data=" . urlencode($prenotazione['data_prenotazione']) . "&ora=" . urlencode($prenotazione['ora_prenotazione']) . "'>❌ Elimina</a>
-                        </td>
-                    </tr>";
+                   echo "<tr>
+                            <td>" . htmlspecialchars($prenotazione['nome_utente']) . "</td>
+                            <td>" . htmlspecialchars($prenotazione['data_prenotazione']) . "</td>
+                            <td>" . htmlspecialchars($prenotazione['ora_prenotazione']) . "</td>
+                            <td> <a href='rimuovi_prenotazione.php?utente=" . urlencode($prenotazione['nome_utente']) . "&parcheggio=" . urlencode($nome_parcheggio) . "&data=" . urlencode($prenotazione['data_prenotazione']) . "&ora=" . urlencode($prenotazione['ora_prenotazione']) . "'>❌ Elimina</a> </td>
+                        </tr>";
                 }
             } else {
                 echo "<tr><td colspan='4'>Nessuna prenotazione trovata.</td></tr>";
             }
-
             echo "</table>";
         }
         ?>
+    </main>
 </body>
 </html>

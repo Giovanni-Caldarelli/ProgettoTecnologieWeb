@@ -12,3 +12,4 @@ pg_query_params($conn, $query, [$_GET['utente'], $_GET['parcheggio'], $_GET['dat
 
 header("Location: admin.php");
 exit();
+?>

@@ -1,22 +1,14 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require '../database.php'; 
 
-require '../database.php'; // Connessione al database
-
-// Controllo se l'utente è loggato
 if (!isset($_SESSION['user_nome'])) {
     header("Location: login.php");
     exit();
 }
-
 $user_nome = $_SESSION['user_nome'];
-
-// Recupera tutte le prenotazioni dell'utente
 $query = "SELECT * FROM prenotazioni WHERE nome_utente = $1 ORDER BY id DESC";
 $result = pg_query_params($conn, $query, [$user_nome]);
-
 $prenotazioni = pg_fetch_all($result);
 ?>
 
@@ -26,7 +18,6 @@ $prenotazioni = pg_fetch_all($result);
     <title>FastPark - Area Riservata</title>
     <meta charset="UTF-8">
     <meta name="generator" content="Visual Studio Code">
-    <meta name="keywords" content="parcheggio, auto, fastpark, sosta, sicurezza, prenotazione online, centro città,area riservata">
     <meta name="author" content="Giovanni Caldarelli">
     <meta name="description" content="FastPark - Area riservata.">
     <link rel="icon" href="../risorse/immagini/logoP.png" type="image/png">
@@ -51,7 +42,7 @@ $prenotazioni = pg_fetch_all($result);
     </header>
 
     <main>
-    <h2>Benvenuto <?php echo htmlspecialchars($user_nome); ?>, questa è la tua area riservata</h2>
+        <h2>Benvenuto <?php echo htmlspecialchars($user_nome); ?>, questa è la tua area riservata</h2>
         <br>
         <section id="prenotazioni">
             <h3>Le tue prenotazioni</h3>
@@ -72,6 +63,7 @@ $prenotazioni = pg_fetch_all($result);
             ?>
         </section>
     </main>
+
     <div class="info-prenotazione">
         <p>Se desideri modificare o annullare una prenotazione, ti invitiamo a contattare il nostro personale.</p>
         <a href="../homePage/homePage.php#contatti" class="btn-contatti">Contattaci</a>
