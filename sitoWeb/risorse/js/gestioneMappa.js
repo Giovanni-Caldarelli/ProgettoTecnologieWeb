@@ -8,12 +8,11 @@ function initMap() {
     const generalMap = L.map("map-all", {
         center: [40.8401, 14.2522],
         zoom: 13,
-        scrollWheelZoom: false, // ❌ Disabilita lo scroll della mappa
-        dragging: true, // Mantiene il drag attivo
-        touchZoom: true, // Permette il pinch-to-zoom sui dispositivi mobili
-        doubleClickZoom: false // ❌ Disabilita lo zoom con doppio click
+        scrollWheelZoom: false, 
+        dragging: true, 
+        touchZoom: true, 
+        doubleClickZoom: false 
     });
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(generalMap);
@@ -23,5 +22,4 @@ function initMap() {
         marker.bindPopup(`<b>${location.name}</b><br>${location.address}<br><a href='${location.link}' target='_blank'>Apri su Maps</a>`);
     });
 }
-
 document.addEventListener("DOMContentLoaded", initMap);

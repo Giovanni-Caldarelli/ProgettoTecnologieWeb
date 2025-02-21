@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
 
     let index = 0;
-    const slidesPerView = 3; // Numero di slide visibili contemporaneamente
+    const slidesPerView = 3; 
     const totalSlides = slides.length;
 
     function updateSlider() {
         const maxIndex = totalSlides - slidesPerView;
         index = Math.max(0, Math.min(index, maxIndex));
-        const offset = -index * 310 + "px"; // Spostamento del wrapper
-        sliderWrapper.style.transform = `translateX(${offset})`; // 🔹 CORRETTO con backtick
+        const offset = -index * 310 + "px"; 
+        sliderWrapper.style.transform = `translateX(${offset})`; 
     }
 
     nextBtn.addEventListener("click", function () {
@@ -29,6 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Imposta la posizione iniziale corretta
     updateSlider();
 });

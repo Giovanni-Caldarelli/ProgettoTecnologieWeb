@@ -6,7 +6,6 @@ function validaRegistrazione(form) {
     let password2 = form.password2.value;
     let errorMsg = "";
 
-    // Controllo che i campi non siano vuoti
     if (nome === "") {
         errorMsg += "Il nome è obbligatorio.\n";
         form.nome.focus();
@@ -40,13 +39,11 @@ function validaRegistrazione(form) {
         form.password2.focus();
     }
 
-    // Se ci sono errori, mostriamo un alert e blocchiamo l'invio
     if (errorMsg !== "") {
         alert(errorMsg);
         return false;
     }
-
-    return true; // Permette l'invio del modulo
+    return true; 
 }
 
 
