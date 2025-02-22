@@ -203,17 +203,17 @@ COPY public.prenotazioni (id, nome_utente, nome_parcheggio, data_prenotazione, o
 --
 
 COPY public.utenti (id, nome, cognome, email, password, tipo_utente, data_registrazione) FROM stdin;
-1	Admin	Super	admin@email.com	$2a$06$sQOS1U8iREPP3EO8WrteVOV6O/m3IcSal/.5iAYu6LLVIQdHEEs9a	admin	2025-02-19 15:24:28.141647
-2	Mario	Rossi	mario.rossi@email.com	$2a$06$D60jyY9KRxMVGR5nLSDBVeExQMNKX9TvlbUiKWEzj9tn/xLDSqwoi	registrato	2025-02-19 15:24:28.141647
-3	Luca	Bianchi	luca.bianchi@email.com	$2a$06$0TpWa3tv0WZThcKOhbbgMePVXXJSc7TMctWqELPLvKN9bGZhN.ek2	registrato	2025-02-19 15:24:28.141647
-4	Anna	Verdi	anna.verdi@email.com	$2a$06$wOOqoorpSbJCj9Lcqm/vY.Y.H0Vn4.CDNywLfNG4.RbPDt75tppCC	registrato	2025-02-19 15:24:28.141647
-5	Giuseppe	Esposito	giuseppe.esposito@email.com	$2a$06$v.hRcJAvK5F135Vn1wz7KOR2uPZ2VtVujm4oxwU/DTP5gNONwx5JK	registrato	2025-02-19 15:24:28.141647
-6	Giovanna	Ferrari	giovanna.ferrari@email.com	$2a$06$7aljeUoO/dNj4dV1BQOWSOB8I9PGy9t.mIVUP2lvwltNsLbdV4v6i	registrato	2025-02-19 15:24:28.141647
-7	Francesco	Russo	francesco.russo@email.com	$2a$06$J/XRU/P4oIjp8.XFElJRxe.BwK/IzONDn6fyFPvWCGGEUQfDsq9sW	registrato	2025-02-19 15:24:28.141647
-8	Paola	De Luca	paola.deluca@email.com	$2a$06$7PguWxYpFPPmabMMtCqMZ.IXsLoF.5xR9MVSxiO/.WEcT6HUOFX4.	registrato	2025-02-19 15:24:28.141647
-9	Raffaella	Mancini	raffaella.mancini@email.com	$2a$06$gMMOdq4EDYCffTxIqGVl0e9Dvx.S7g9GT8eoxuwe/MwxSSX4oTgi2	registrato	2025-02-19 15:24:28.141647
-10	Chiara	Moretti	chiara.moretti@email.com	$2a$06$4TRZ.BTuEmVP9JhyF2/6D.OO1KlFVLTHvHcBQW34IayBE7CBdCscy	registrato	2025-02-19 15:24:28.141647
-11	Andrea	Gallo	andrea.gallo@email.com	$2a$06$gDpcZlB8OkCJS2u6IyFE8e8zUE/7KpJUIWzxURVlXy0qQ8CzThVUa	registrato	2025-02-19 15:24:28.141647
+1	Admin	Super	admin@email.com	$2a$06$BCeMZGBupo6D2UIIE10FIOxDTT714rQm5tVMH7BndsBUwofrpgZVe	admin	2025-02-22 11:28:47.886499
+2	Mario	Rossi	mario.rossi@email.com	$2a$06$Y/qTv8D8D/veJYaJZfrVseBiYZMfjG.3.VXnTdFDaX3Q9mVXA53hS	registrato	2025-02-22 11:28:47.886499
+3	Luca	Bianchi	luca.bianchi@email.com	$2a$06$VQwAOaKBDXx9/6bCMI0IseEaxkLMXxWSEZb9te3BgKr7uZkBtNK1K	registrato	2025-02-22 11:28:47.886499
+4	Anna	Verdi	anna.verdi@email.com	$2a$06$niBm/tpsfdiqmcey3OaYZem4HjGwhZPKs.oY5ca4dbGqV.UazIaK6	registrato	2025-02-22 11:28:47.886499
+5	Giuseppe	Esposito	giuseppe.esposito@email.com	$2a$06$1SdiRX8n2lO7RmLH1Xd2VuxPg3WI3v5cqjAwTNeSxet3Vg5Gio/vO	registrato	2025-02-22 11:28:47.886499
+6	Giovanna	Ferrari	giovanna.ferrari@email.com	$2a$06$DTJ/83Y9ZY5T7Bh1QluXiOJXKft9rH0.nQS.De9yp.SticVDSnvT.	registrato	2025-02-22 11:28:47.886499
+7	Francesco	Russo	francesco.russo@email.com	$2a$06$2zY0FXmf3GgnApsaCrtT6u52urek10YMpX/LGBBVTNt9b8MtLvLF2	registrato	2025-02-22 11:28:47.886499
+8	Paola	De Luca	paola.deluca@email.com	$2a$06$aqJnoqzf3B3enYHxTA9sTu6UT0Z2AqV0xhJNBqsc6ydx9mmffNbcS	registrato	2025-02-22 11:28:47.886499
+9	Raffaella	Mancini	raffaella.mancini@email.com	$2a$06$2VQBRXA5CS.Fjv7PUQYrFewkf8Hw2bkc6oFoojNipeQ5dwitU5KiS	registrato	2025-02-22 11:28:47.886499
+10	Chiara	Moretti	chiara.moretti@email.com	$2a$06$qtkNUOvWy3E53w6tz7dC.eVdVvOIAyF1Vyd1WSQhpGTQQl9beDPT.	registrato	2025-02-22 11:28:47.886499
+11	Andrea	Gallo	andrea.gallo@email.com	$2a$06$sXjlwLWZEcIL7e2MKJECouRqALmRfOCXzxhBi9dsOvT9boIiuC3Oq	registrato	2025-02-22 11:28:47.886499
 \.
 
 
@@ -235,7 +235,7 @@ SELECT pg_catalog.setval('public.prenotazioni_id_seq', 10, true);
 -- Name: utenti_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.utenti_id_seq', 11, true);
+SELECT pg_catalog.setval('public.utenti_id_seq', 12, true);
 
 
 --

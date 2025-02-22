@@ -1,6 +1,6 @@
 INSERT INTO utenti (nome, cognome, email, password, tipo_utente) VALUES
-('Admin', 'Super', 'admin@email.com', crypt('adminpassword', gen_salt('bf')), 'admin'),
-('Mario', 'Rossi', 'mario.rossi@email.com', crypt('password1', gen_salt('bf')), 'registrato'),
+('Admin', 'Super', 'admin@email.com', crypt('Adminpassword1', gen_salt('bf')), 'admin'),
+('Mario', 'Rossi', 'mario.rossi@email.com', crypt('Password1', gen_salt('bf')), 'registrato'),
 ('Luca', 'Bianchi', 'luca.bianchi@email.com', crypt('password2', gen_salt('bf')), 'registrato'),
 ('Anna', 'Verdi', 'anna.verdi@email.com', crypt('password3', gen_salt('bf')), 'registrato'),
 ('Giuseppe', 'Esposito', 'giuseppe.esposito@email.com', crypt('password4', gen_salt('bf')), 'registrato'),
