@@ -139,6 +139,47 @@ session_start();
             </div>
         </section>
 
+        <section id="parcheggi-napoli">
+    <div class="content-container">
+        <img src="..\risorse\immagini\Centro Storico.png" alt="Parcheggio Centro Storico">
+        <div class="text-content">
+            <h3>Centro Storico</h3>
+            <p>
+                Il nostro parcheggio situato nel <strong>Centro Storico</strong> di Napoli è perfetto per chi vuole 
+                visitare i monumenti e le vie storiche della città. A pochi passi da Via Toledo e Spaccanapoli, 
+                offre sicurezza e comodità per la tua auto. Potrai lasciare il veicolo in una posizione strategica 
+                e muoverti comodamente a piedi per esplorare le meraviglie del centro storico, dai vicoli caratteristici 
+                ai ristoranti tipici, fino alle innumerevoli attrazioni culturali come il Duomo di Napoli e il Cristo Velato.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="text-content">
+            <h3>Mergellina</h3>
+            <p>
+                Se desideri goderti una passeggiata sul lungomare di Napoli, il nostro parcheggio a <strong>Mergellina</strong> 
+                è la scelta ideale. A pochi metri dal mare e dalle famose spiagge cittadine, permette di lasciare l'auto in un luogo sicuro 
+                e raggiungere le migliori attrazioni della zona. Potrai visitare la storica Fontana del Sebeto, il porto turistico, 
+                oppure goderti una cena in uno dei rinomati ristoranti di pesce della zona, ammirando il tramonto sul Golfo di Napoli.
+            </p>
+        </div>
+        <img src="..\risorse\immagini\lungomare-Mergellina.jpeg" alt="Parcheggio Mergellina">
+    </div>
+
+    <div class="content-container">
+        <img src="..\risorse\immagini\Vomero (2).png" alt="Parcheggio Vomero">
+        <div class="text-content">
+            <h3>Vomero</h3>
+            <p>
+                Situato in una delle zone più eleganti di Napoli, il parcheggio <strong>Vomero</strong> è perfetto per chi vuole 
+                passeggiare tra negozi, locali esclusivi e luoghi di interesse come Castel Sant’Elmo e la Certosa di San Martino. 
+                Il quartiere è noto per la sua vivace vita culturale e commerciale, con boutique, cinema, teatri e locali alla moda.
+            </p>
+        </div>
+    </div>
+</section>
+
 
         <section id="mappa">
             <div id="map-all" class="map">
