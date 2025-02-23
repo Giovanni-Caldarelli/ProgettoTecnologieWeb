@@ -28,15 +28,14 @@ function initMap() {
     locations.forEach(location => {
         const marker = L.marker([location.lat, location.lng], { icon: blueIcon }).addTo(generalMap);
         marker.bindPopup(`<b>${location.name}</b><br>${location.address}<br><a href='${location.link}' target='_blank'>Apri su Maps</a>`);
-        location.marker = marker; // Salviamo il marker nel nostro oggetto location
+        location.marker = marker; 
         markers.push(marker);
     });
 
-    // Aggiunge un box per racchiudere tutti i marker sulla mappa
     const group = L.featureGroup(markers);
     generalMap.fitBounds(group.getBounds());
 
-    // Aggiungi la posizione dell'utente con un pin rosso e trova il parcheggio più vicino
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             const userLat = position.coords.latitude;
@@ -53,7 +52,6 @@ function initMap() {
             const userMarker = L.marker([userLat, userLng], { icon: redIcon }).addTo(generalMap);
             userMarker.bindPopup("<b>La tua posizione</b>").openPopup();
 
-            // Trova il parcheggio più vicino
             let nearestLocation = null;
             let nearestDistance = Infinity;
 
@@ -65,7 +63,6 @@ function initMap() {
                 }
             });
 
-            // Evidenzia il parcheggio più vicino
             if (nearestLocation) {
                 nearestLocation.marker.bindPopup(`<b>${nearestLocation.name} (Parcheggio più vicino)</b><br>${nearestLocation.address}<br>
                     <a href='#' onclick='openGoogleMaps(${nearestLocation.lat}, ${nearestLocation.lng})'>Apri su Maps</a>`).openPopup();
@@ -76,7 +73,6 @@ function initMap() {
     }
 }
 
-// Apri Google Maps con il percorso dalla posizione utente al parcheggio selezionato
 window.openGoogleMaps = function(destLat, destLng) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
